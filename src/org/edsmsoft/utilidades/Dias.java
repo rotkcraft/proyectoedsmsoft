@@ -5,12 +5,12 @@ package org.edsmsoft.utilidades;
  */
 public enum Dias
 {
-    LUNES("Lunes"),MARTES("Martes"),MIERCOLES("Miercoles"),JUEVES("Jueves"),VIERNES("Viernes"),SABADO("Sabado"),DOMINGO("Domingo");
+    LUNES("Lunes"), MARTES("Martes"), MIERCOLES("Miercoles"), JUEVES("Jueves"), VIERNES("Viernes"), SABADO("Sabado"), DOMINGO("Domingo");
     private String dia;
 
     private Dias(String dia)
     {
-         this.dia=dia;
+        this.dia = dia;
     }
 
     @Override

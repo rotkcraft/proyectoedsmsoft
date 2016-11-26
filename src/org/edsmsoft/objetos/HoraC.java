@@ -22,7 +22,7 @@ public class HoraC
 
     public HoraC(LocalTime horaInicio, int minutos)
     {
-        this(horaInicio,horaInicio.plusMinutes(minutos));
+        this(horaInicio, horaInicio.plusMinutes(minutos));
 
     }
 
@@ -49,6 +49,6 @@ public class HoraC
     @Override
     public String toString()
     {
-       return new LocalTimeStringConverter(FormatStyle.SHORT).toString(horaInicio)+"-"+new LocalTimeStringConverter(FormatStyle.SHORT).toString(horaFinal);
+        return new LocalTimeStringConverter(FormatStyle.SHORT).toString(horaInicio) + "-" + new LocalTimeStringConverter(FormatStyle.SHORT).toString(horaFinal);
     }
 }

@@ -28,8 +28,10 @@ public class Login implements Initializable
     public JFXTextField txtUsuario;
     public JFXPasswordField txtClave;
     public VBox contenedor;
-    @FXML private JFXButton btnSalir;
-    @FXML private JFXButton btnEntrar;
+    @FXML
+    private JFXButton btnSalir;
+    @FXML
+    private JFXButton btnEntrar;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -43,18 +45,18 @@ public class Login implements Initializable
             {
                 try
                 {
-                    Node raiz = (Node)  event.getSource();
-                    Stage vent=(Stage) raiz.getScene().getWindow();
+                    Node raiz = (Node) event.getSource();
+                    Stage vent = (Stage) raiz.getScene().getWindow();
 
-                    FXMLLoader cargar=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/menuprincipal.fxml"));
-                    Node nodo=(Node) cargar.load();
+                    FXMLLoader cargar = new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/menuprincipal.fxml"));
+                    Node nodo = (Node) cargar.load();
 
-                    MenuPrincipal menuPrincipal=cargar.<MenuPrincipal>getController();
-                   // menuPrincipal.setUsuario(id);
+                    MenuPrincipal menuPrincipal = cargar.<MenuPrincipal>getController();
+                    // menuPrincipal.setUsuario(id);
 
-                    Parent root = (Pane)nodo;
+                    Parent root = (Pane) nodo;
                     vent.setTitle("Menu Principal");
-                    Scene scene=new Scene(root,600,400);
+                    Scene scene = new Scene(root, 600, 400);
                     adaptar(scene, (Pane) root);
 
                     vent.setScene(scene);
@@ -62,15 +64,21 @@ public class Login implements Initializable
 //                    vent.setFullScreen(true);
                     vent.show();
 
-                }catch (Exception ex){ex.printStackTrace();}
+                }
+                catch (Exception ex)
+                {
+                    ex.printStackTrace();
+                }
 
             }
         });
     }
-    private void adaptar(final Scene scene, final Pane contentPane) {
-        final double ancho  = scene.getWidth();
+
+    private void adaptar(final Scene scene, final Pane contentPane)
+    {
+        final double ancho = scene.getWidth();
         final double alto = scene.getHeight();
-        final double proporcion      = ancho / alto;
+        final double proporcion = ancho / alto;
 
         Escalar sizeListener = new Escalar(scene, proporcion, alto, ancho, contentPane);
         scene.widthProperty().addListener(sizeListener);

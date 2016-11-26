@@ -18,18 +18,17 @@ public class PanelMenuPrincipal implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        JFXButton alumnos=new JFXButton();
+        JFXButton alumnos = new JFXButton();
         alumnos.setText("Alumnos");
 
-        JFXButton maestros=new JFXButton();
+        JFXButton maestros = new JFXButton();
         maestros.setText("Alumnos");
 
-        JFXButton matricula=new JFXButton();
+        JFXButton matricula = new JFXButton();
         matricula.setText("Alumnos");
 
-        JFXButton academico=new JFXButton();
+        JFXButton academico = new JFXButton();
         academico.setText("Alumnos");
-
 
 
     }

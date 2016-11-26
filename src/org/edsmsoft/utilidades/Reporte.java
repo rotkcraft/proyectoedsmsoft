@@ -6,15 +6,17 @@ import org.rcraft.visor.JasperViewerFX;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.HashMap;
+
 /**
  * Created by rcraft on 11-25-16.
  */
 public class Reporte
 {
     private String url;
-    private String usuario ;
-    private String clave ;
+    private String usuario;
+    private String clave;
     private HashMap<String, Object> param;
+
     public Reporte()
     {
         Archivo archivo = new Archivo("archivo/configuraciondb");
@@ -25,17 +27,18 @@ public class Reporte
         this.url = s[0];
 
     }
-    public Reporte(String reporte,Stage ventanap,String titulo)
+
+    public Reporte(String reporte, Stage ventanap, String titulo)
     {
         this();
         try
         {
             Connection conexion = DriverManager.getConnection(url, usuario, clave);
 
-            param= new HashMap<String, Object>();
+            param = new HashMap<String, Object>();
 
 
-            JasperViewerFX viewer = new JasperViewerFX(ventanap, titulo,conexion, reporte, param,false);
+            JasperViewerFX viewer = new JasperViewerFX(ventanap, titulo, conexion, reporte, param, false);
             viewer.show();
 
             conexion.close();
@@ -48,17 +51,17 @@ public class Reporte
 
     }
 
-    public Reporte(String reporte,Stage ventanap,String titulo,HashMap<String, Object> param)
+    public Reporte(String reporte, Stage ventanap, String titulo, HashMap<String, Object> param)
     {
         this();
 
         try
         {
             Connection conexion = DriverManager.getConnection(url, usuario, clave);
-            this.param=param;
+            this.param = param;
 
 
-            JasperViewerFX viewer = new JasperViewerFX(ventanap, titulo,conexion, reporte, this.param,false);
+            JasperViewerFX viewer = new JasperViewerFX(ventanap, titulo, conexion, reporte, this.param, false);
             viewer.show();
 
             conexion.close();
@@ -69,7 +72,6 @@ public class Reporte
         }
 
     }
-
 
 
 }

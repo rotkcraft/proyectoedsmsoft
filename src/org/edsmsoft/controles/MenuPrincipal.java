@@ -23,12 +23,13 @@ public class MenuPrincipal extends AnchorPane implements Initializable
     public JFXDrawer menuDraw;
     public AnchorPane contenedorMPrincipal;
     private Pane panelMenuParent;
+
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
         try
         {
-             panelMenuParent = FXMLLoader.load(getClass().getResource("/org/edsmsoft/lienzos/panelmenuprincipal.fxml"));
+            panelMenuParent = FXMLLoader.load(getClass().getResource("/org/edsmsoft/lienzos/panelmenuprincipal.fxml"));
         }
         catch (IOException e)
         {
@@ -39,7 +40,7 @@ public class MenuPrincipal extends AnchorPane implements Initializable
         menuDraw.setOverLayVisible(false);
         menuDraw.setSidePane(panelMenuParent);
         menuDraw.setId("MenuDraw");
-        HamburgerBackArrowBasicTransition flecha=new HamburgerBackArrowBasicTransition(btnMenuPrincipal);
+        HamburgerBackArrowBasicTransition flecha = new HamburgerBackArrowBasicTransition(btnMenuPrincipal);
         flecha.setRate(-1);
 
         btnMenuPrincipal.addEventHandler(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>()
@@ -47,15 +48,16 @@ public class MenuPrincipal extends AnchorPane implements Initializable
             @Override
             public void handle(MouseEvent event)
             {
-                flecha.setRate(flecha.getRate()*-1);
+                flecha.setRate(flecha.getRate() * -1);
                 flecha.play();
-                if(menuDraw.isHidden())
+                if (menuDraw.isHidden())
                 {
-                     menuDraw.open();
+                    menuDraw.open();
                 }
-                else {
-                        menuDraw.close();
-                    }
+                else
+                {
+                    menuDraw.close();
+                }
 
             }
         });

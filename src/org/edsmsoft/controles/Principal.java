@@ -22,9 +22,9 @@ public class Principal extends Application
     @Override
     public void start(Stage primaryStage) throws IOException
     {
-        Parent root  = FXMLLoader.load(getClass().getResource("/org/edsmsoft/lienzos/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/org/edsmsoft/lienzos/login.fxml"));
 
-        Scene scene=new Scene(root);
+        Scene scene = new Scene(root);
         primaryStage.setTitle("Login");
 
         primaryStage.setScene(scene);

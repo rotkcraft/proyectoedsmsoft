@@ -167,7 +167,7 @@ public class ListaDoble<E> implements Cloneable
 
     public NodoDoble<E> getUltimo()
     {
-        return ultimo.getAnterior ();
+        return ultimo.getAnterior();
     }
 
     public NodoDoble<E> ret_Nodo(int pos)
@@ -212,7 +212,7 @@ public class ListaDoble<E> implements Cloneable
 
     public E ultimo()
     {
-        return ultimo.getAnterior ().getInfo();
+        return ultimo.getAnterior().getInfo();
     }
 
 
@@ -295,7 +295,7 @@ public class ListaDoble<E> implements Cloneable
         anterior.setSiguiente(actual);
         actual.setAnterior(anterior);
         cantidad--;
-        return nodoD.getInfo ();
+        return nodoD.getInfo();
 
     }
 
@@ -379,23 +379,23 @@ public class ListaDoble<E> implements Cloneable
 
         StringBuilder sb = new StringBuilder();
         sb.append("[");
-        NodoDoble<E> ac = ultimo.getAnterior ();
+        NodoDoble<E> ac = ultimo.getAnterior();
         while (ac != primero)
         {
 
             sb.append(ac.getInfo() + ((ac.getAnterior() != primero) ? "," : ""));
             ac = ac.getAnterior();
         }
-        sb.append ("]");
+        sb.append("]");
         return sb.toString();
     }
 
     public ListaDoble<E> clone()
     {
-        ListaDoble<E> listaDoble=new ListaDoble<E> ();
-        for(int i=1;i<=cantidad;i++)
+        ListaDoble<E> listaDoble = new ListaDoble<E>();
+        for (int i = 1; i <= cantidad; i++)
         {
-            listaDoble.insFinal (ret_Elemento (i));
+            listaDoble.insFinal(ret_Elemento(i));
         }
         return listaDoble;
     }

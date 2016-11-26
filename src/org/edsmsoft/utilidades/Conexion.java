@@ -1,8 +1,5 @@
 package org.edsmsoft.utilidades;
 
-import org.edsmsoft.estructuras.ListaDoble;
-import org.edsmsoft.objetos.PermisosUsuarios;
-import org.edsmsoft.objetos.Usuario;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -14,6 +11,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Callback;
+import org.edsmsoft.estructuras.ListaDoble;
+import org.edsmsoft.objetos.PermisosUsuarios;
+import org.edsmsoft.objetos.Usuario;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
@@ -39,7 +39,6 @@ import java.util.Date;
 import java.util.LinkedList;
 
 
-
 /**
  * Created by rcraft on 11-25-16.
  */
@@ -51,12 +50,12 @@ public class Conexion
 
     public Conexion()
     {
-     //   Archivo archivo = new Archivo("archivo/configuraciondb");
-      //  String[] s = new Encriptar().desencriptar(archivo.traeArchivo()).split(",|;");
-        
+        //   Archivo archivo = new Archivo("archivo/configuraciondb");
+        //  String[] s = new Encriptar().desencriptar(archivo.traeArchivo()).split(",|;");
+
         this.usuario = "root";
         this.clave = "root";
-        this.url ="jdbc:mysql://192.168.0.164:3306/bdhorarios";
+        this.url = "jdbc:mysql://192.168.0.164:3306/bdhorarios";
     }
 
     public Conexion(String url, String usuario, String clave)
@@ -78,25 +77,25 @@ public class Conexion
 //        Conexion conexion = new Conexion();
 //        Conexion bd = new Conexion(conn, usuario, pass);
 //  }*/
-    
+
     public int cantidadFilas(String sql)
     {
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
-        int retonar=0;
+        int retonar = 0;
         try
         {
 
-             conn = DriverManager.getConnection(url, usuario, clave);
+            conn = DriverManager.getConnection(url, usuario, clave);
             st = conn.createStatement();
             rs = st.executeQuery(sql);
 
-            while(rs.next())
+            while (rs.next())
             {
-            	retonar++;
+                retonar++;
             }
-            
+
             rs.close();
             st.close();
             conn.close();
@@ -113,8 +112,8 @@ public class Conexion
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
-        int c=0;
-        Encriptar encriptar=new Encriptar();
+        int c = 0;
+        Encriptar encriptar = new Encriptar();
 
         try
         {
@@ -126,7 +125,7 @@ public class Conexion
 
             while (rs.next())
             {
-               c++;
+                c++;
             }
 
             rs.close();
@@ -138,16 +137,16 @@ public class Conexion
             e.printStackTrace();
         }
 
-        return c>0?false:true;
+        return c > 0 ? false : true;
     }
-    
-    public boolean siExiste(String sql,String a,String b ,Valor dato)
+
+    public boolean siExiste(String sql, String a, String b, Valor dato)
     {
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
-        ListaDoble<Valor> listaD=new ListaDoble<Valor>();
-        Encriptar encriptar=new Encriptar();
+        ListaDoble<Valor> listaD = new ListaDoble<Valor>();
+        Encriptar encriptar = new Encriptar();
 
         try
         {
@@ -159,7 +158,7 @@ public class Conexion
 
             while (rs.next())
             {
-                listaD.insFinal(new Valor(encriptar.desencriptar(rs.getString(a)),encriptar.desencriptar(rs.getString(b))));
+                listaD.insFinal(new Valor(encriptar.desencriptar(rs.getString(a)), encriptar.desencriptar(rs.getString(b))));
             }
 
             rs.close();
@@ -170,31 +169,29 @@ public class Conexion
         {
             e.printStackTrace();
         }
-        for(int i=1;i<=listaD.getCantidad();i++)
+        for (int i = 1; i <= listaD.getCantidad(); i++)
         {
-        	if(listaD.ret_Elemento(i).getId().compareToIgnoreCase(dato.getId())==0)
-        	{
-        		return true;
-        	}
+            if (listaD.ret_Elemento(i).getId().compareToIgnoreCase(dato.getId()) == 0)
+            {
+                return true;
+            }
         }
         return false;
     }
 
-    
-  
-    
-    public boolean existeDato(String sql,String a,String b ,Valor dato)
+
+    public boolean existeDato(String sql, String a, String b, Valor dato)
     {
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
-        ListaDoble<Valor> listaD=new ListaDoble<Valor>();
-        Encriptar encriptar=new Encriptar();
+        ListaDoble<Valor> listaD = new ListaDoble<Valor>();
+        Encriptar encriptar = new Encriptar();
 
         try
         {
 
-           Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(url, usuario, clave);
             st = conn.createStatement();
             rs = st.executeQuery(sql);
@@ -202,7 +199,7 @@ public class Conexion
 
             while (rs.next())
             {
-                listaD.insFinal(new Valor(encriptar.desencriptar(rs.getString(a)),encriptar.desencriptar(rs.getString(b))));
+                listaD.insFinal(new Valor(encriptar.desencriptar(rs.getString(a)), encriptar.desencriptar(rs.getString(b))));
             }
 
             rs.close();
@@ -213,12 +210,12 @@ public class Conexion
         {
             e.printStackTrace();
         }
-        for(int i=1;i<=listaD.getCantidad();i++)
+        for (int i = 1; i <= listaD.getCantidad(); i++)
         {
-        	if(listaD.ret_Elemento(i).getId().compareToIgnoreCase(dato.getId())==0 && listaD.ret_Elemento(i).getValor().compareToIgnoreCase(dato.getValor())==0 )
-        	{
-        		return true;
-        	}
+            if (listaD.ret_Elemento(i).getId().compareToIgnoreCase(dato.getId()) == 0 && listaD.ret_Elemento(i).getValor().compareToIgnoreCase(dato.getValor()) == 0)
+            {
+                return true;
+            }
         }
         return false;
     }
@@ -232,7 +229,7 @@ public class Conexion
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-             conn = DriverManager.getConnection(url, usuario, clave);
+            conn = DriverManager.getConnection(url, usuario, clave);
             st = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             st.executeUpdate();
             rs = st.getGeneratedKeys();
@@ -252,41 +249,9 @@ public class Conexion
     }
 
 
-
     public ObservableList<PermisosUsuarios> traerPermisosUsu(String sql)
     {
-        ObservableList<PermisosUsuarios> permisoUsuarios= FXCollections.observableArrayList();
-        Connection conn = null;
-        Statement st = null;
-        ResultSet rs = null;
-
-        try
-        {
-            Class.forName("com.mysql.jdbc.Driver");
-             conn = DriverManager.getConnection(url, usuario, clave);
-            st = conn.createStatement();
-            rs = st.executeQuery(sql);
-
-
-            while (rs.next())
-            {
-                permisoUsuarios.add(new PermisosUsuarios(rs.getString(1),rs.getString(2),rs.getString(3),rs.getBoolean(4)));
-            }
-
-            rs.close();
-            st.close();
-            conn.close();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
-        return permisoUsuarios;
-    }
-    public LinkedList<String> traerLista(String sql)
-    {
-        LinkedList<String> permisoUsuarios= new LinkedList<String>();
+        ObservableList<PermisosUsuarios> permisoUsuarios = FXCollections.observableArrayList();
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
@@ -301,7 +266,7 @@ public class Conexion
 
             while (rs.next())
             {
-                permisoUsuarios.add((rs.getString(2)+","+rs.getString(1)));
+                permisoUsuarios.add(new PermisosUsuarios(rs.getString(1), rs.getString(2), rs.getString(3), rs.getBoolean(4)));
             }
 
             rs.close();
@@ -316,6 +281,37 @@ public class Conexion
         return permisoUsuarios;
     }
 
+    public LinkedList<String> traerLista(String sql)
+    {
+        LinkedList<String> permisoUsuarios = new LinkedList<String>();
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(url, usuario, clave);
+            st = conn.createStatement();
+            rs = st.executeQuery(sql);
+
+
+            while (rs.next())
+            {
+                permisoUsuarios.add((rs.getString(2) + "," + rs.getString(1)));
+            }
+
+            rs.close();
+            st.close();
+            conn.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return permisoUsuarios;
+    }
 
 
 //    public ObservableList<DatosPermisoUsuario> traerPermisos(String sql)
@@ -350,18 +346,18 @@ public class Conexion
 //    }
 
 
-    public int aumentarId(String sql,String a,String b,Valor dato)
+    public int aumentarId(String sql, String a, String b, Valor dato)
     {
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
-        ListaDoble<Valor> listaD=new ListaDoble<Valor>();
-        Encriptar encriptar=new Encriptar();
+        ListaDoble<Valor> listaD = new ListaDoble<Valor>();
+        Encriptar encriptar = new Encriptar();
 
         try
         {
 
-          //  Class.forName("com.mysql.jdbc.Driver");
+            //  Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(url, usuario, clave);
             st = conn.createStatement();
             rs = st.executeQuery(sql);
@@ -369,7 +365,7 @@ public class Conexion
 
             while (rs.next())
             {
-                listaD.insFinal(new Valor(encriptar.desencriptar(rs.getString(a)),encriptar.desencriptar(rs.getString(b))));
+                listaD.insFinal(new Valor(encriptar.desencriptar(rs.getString(a)), encriptar.desencriptar(rs.getString(b))));
             }
 
             rs.close();
@@ -380,27 +376,27 @@ public class Conexion
         {
             e.printStackTrace();
         }
-        for(int i=1;i<=listaD.getCantidad();i++)
+        for (int i = 1; i <= listaD.getCantidad(); i++)
         {
-        	if(listaD.ret_Elemento(i).getId().compareToIgnoreCase(dato.getId())==0 && listaD.ret_Elemento(i).getValor().compareToIgnoreCase(dato.getValor())==0 )
-        	{
-        		return i;
-        	}
+            if (listaD.ret_Elemento(i).getId().compareToIgnoreCase(dato.getId()) == 0 && listaD.ret_Elemento(i).getValor().compareToIgnoreCase(dato.getValor()) == 0)
+            {
+                return i;
+            }
         }
         return 0;
     }
 
-    
+
     public void llenarModeloLista(String sql, String id, String campo, DefaultListModel<Valor> cm)
     {
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
-       cm.removeAllElements();
+        cm.removeAllElements();
         try
         {
 
-        //    Class.forName("com.mysql.jdbc.Driver");
+            //    Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(url, usuario, clave);
             st = conn.createStatement();
             rs = st.executeQuery(sql);
@@ -419,26 +415,26 @@ public class Conexion
             e.printStackTrace();
         }
     }
-    
-    
+
+
     public void llenarmodelComboCampos(String sql, DefaultComboBoxModel<Valor> cm)
     {
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
-        ResultSetMetaData rd=null;
+        ResultSetMetaData rd = null;
         cm.removeAllElements();
         try
         {
             conn = DriverManager.getConnection(url, usuario, clave);
             st = conn.createStatement();
             rs = st.executeQuery(sql);
-            rd=rs.getMetaData();
+            rd = rs.getMetaData();
 
-             for(int i=1;i<=rd.getColumnCount();i++)
-             {
-            	 cm.addElement(new Valor(rd.getColumnName(i),rd.getColumnLabel(i)));
-             }
+            for (int i = 1; i <= rd.getColumnCount(); i++)
+            {
+                cm.addElement(new Valor(rd.getColumnName(i), rd.getColumnLabel(i)));
+            }
 
             rs.close();
             st.close();
@@ -450,8 +446,6 @@ public class Conexion
         }
     }
 
-
-    
 
     public void llenarmodelCombo(String sql, String id, String campo, DefaultComboBoxModel<Valor> cm)
     {
@@ -557,7 +551,7 @@ public class Conexion
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
-        ResultSetMetaData rd=null;
+        ResultSetMetaData rd = null;
         valorComboBox.getItems().clear();
         try
         {
@@ -566,11 +560,11 @@ public class Conexion
             conn = DriverManager.getConnection(url, usuario, clave);
             st = conn.createStatement();
             rs = st.executeQuery(sql);
-            rd=rs.getMetaData();
+            rd = rs.getMetaData();
 
-            for (int i=1;i<=rd.getColumnCount();i++)
+            for (int i = 1; i <= rd.getColumnCount(); i++)
             {
-                valorComboBox.getItems().addAll(new Valor(rd.getColumnName(i),rd.getColumnLabel(i)));
+                valorComboBox.getItems().addAll(new Valor(rd.getColumnName(i), rd.getColumnLabel(i)));
 
             }
 
@@ -665,7 +659,8 @@ public class Conexion
             st.close();
             con.close();
 
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
 
         }
@@ -674,8 +669,7 @@ public class Conexion
     }
 
 
-
-    private ObservableList <ObservableList> datos(String sql)
+    private ObservableList<ObservableList> datos(String sql)
     {
         Connection con;
         PreparedStatement ps;
@@ -683,7 +677,7 @@ public class Conexion
         ResultSetMetaData rmd;
         Blob blob;
 
-        ObservableList <ObservableList> datos = FXCollections.observableArrayList();
+        ObservableList<ObservableList> datos = FXCollections.observableArrayList();
 
         try
         {
@@ -721,10 +715,10 @@ public class Conexion
                             fila.add(imag);
 
 
-
                         }
 
-                    } else
+                    }
+                    else
                     {
                         fila.add(rs.getString(x));
                     }
@@ -739,7 +733,8 @@ public class Conexion
             ps.close();
             con.close();
 
-        } catch (Exception ex)
+        }
+        catch (Exception ex)
         {
             ex.printStackTrace();
         }
@@ -748,13 +743,11 @@ public class Conexion
     }
 
 
-
-
     public void llenarTabla(String sql, TableView tabla)
     {
 
 
-        ObservableList <ObservableList> datos = FXCollections.observableArrayList();
+        ObservableList<ObservableList> datos = FXCollections.observableArrayList();
         Connection conexion = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -777,12 +770,14 @@ public class Conexion
             for (int i = 1; i <= columnasContador; i++)
             {
 
-                final int x = i-1;
-                TableColumn columna=new TableColumn(md.getColumnLabel(i));
-                columna.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList,Object>,ObservableValue>(){
+                final int x = i - 1;
+                TableColumn columna = new TableColumn(md.getColumnLabel(i));
+                columna.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList, Object>, ObservableValue>()
+                {
 
-                    public ObservableValue<Object> call(TableColumn.CellDataFeatures<ObservableList,Object> param) {
-                        return new SimpleObjectProperty<Object>(param.getValue ().get (x));
+                    public ObservableValue<Object> call(TableColumn.CellDataFeatures<ObservableList, Object> param)
+                    {
+                        return new SimpleObjectProperty<Object>(param.getValue().get(x));
                     }
                 });
                 tabla.getColumns().add(columna);
@@ -815,10 +810,10 @@ public class Conexion
                             fila.add(imag);
 
 
-
                         }
 
-                    } else
+                    }
+                    else
                     {
                         fila.add(rs.getString(x));
                     }
@@ -837,20 +832,20 @@ public class Conexion
         }
         catch (Exception ignored)
         {
-              ignored.printStackTrace();
+            ignored.printStackTrace();
         }
 
 
     }
 
 
-    public String devolverFecha(String sql,String formato)
+    public String devolverFecha(String sql, String formato)
     {
-        Timestamp fecha=null;
+        Timestamp fecha = null;
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
-         try
+        try
         {
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -860,7 +855,7 @@ public class Conexion
 
             while (rs.next())
             {
-             fecha=   rs.getTimestamp(1);
+                fecha = rs.getTimestamp(1);
             }
 
             rs.close();
@@ -871,55 +866,61 @@ public class Conexion
         {
             e.printStackTrace();
         }
-        Date fech=fecha;
-       return new ConvertidorFechas().fechaConvertir(fech,formato);
+        Date fech = fecha;
+        return new ConvertidorFechas().fechaConvertir(fech, formato);
     }
 
 
-	public String getUrl() {
-		return url;
-	}
+    public String getUrl()
+    {
+        return url;
+    }
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public void setUrl(String url)
+    {
+        this.url = url;
+    }
 
-	public String getUsuario() {
-		return usuario;
-	}
+    public String getUsuario()
+    {
+        return usuario;
+    }
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
+    public void setUsuario(String usuario)
+    {
+        this.usuario = usuario;
+    }
 
-	public String getClave() {
-		return clave;
-	}
+    public String getClave()
+    {
+        return clave;
+    }
 
-	public void setClave(String clave) {
-		this.clave = clave;
-	}
+    public void setClave(String clave)
+    {
+        this.clave = clave;
+    }
 
     public ObservableList<Usuario> traerUsuarios(String sql1, String sql2, String orden)
     {
-        ObservableList<Usuario> permisoUsuarios= FXCollections.observableArrayList();
+        ObservableList<Usuario> permisoUsuarios = FXCollections.observableArrayList();
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
 
         try
         {
-           // Class.forName("com.mysql.jdbc.Driver");
+            // Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(url, usuario, clave);
             st = conn.createStatement();
             rs = st.executeQuery(sql1);
-            Encriptar encriptar=new Encriptar();
+            Encriptar encriptar = new Encriptar();
 
 
             while (rs.next())
             {
-                Usuario usuario=new Usuario(rs.getString(1),encriptar.desencriptar(rs.getString(2)),encriptar.desencriptar(rs.getString(3)));
-                 usuario.setPermisosUsuarioses( traerPermisosUsu(sql2+usuario.getIdUsuario()));
+                Usuario usuario = new Usuario(rs.getString(1), encriptar.desencriptar(rs.getString(2)), encriptar.desencriptar(rs.getString(3)));
+                usuario.setPermisosUsuarioses(traerPermisosUsu(sql2 + usuario.getIdUsuario()));
                 permisoUsuarios.add(usuario);
 
             }

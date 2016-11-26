@@ -35,23 +35,26 @@ public class ConvertidorFechas
 
     public int devolverA(String fecha1, String fecha2, String formato)
     {
-        int dias=Integer.MAX_VALUE;
+        int dias = Integer.MAX_VALUE;
         SimpleDateFormat format = new SimpleDateFormat(formato);
 
         Date d1 = null;
         Date d2 = null;
 
-        try {
+        try
+        {
             d1 = format.parse(fecha1);
             d2 = format.parse(fecha2);
 
             DateTime dt1 = new DateTime(d1);
             DateTime dt2 = new DateTime(d2);
 
-            dias=Years.yearsBetween(dt1, dt2).getYears();
+            dias = Years.yearsBetween(dt1, dt2).getYears();
 
 
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
 
@@ -62,22 +65,25 @@ public class ConvertidorFechas
 
     public int devolverDias(String fecha1, String fecha2, String formato)
     {
-        int dias=Integer.MAX_VALUE;
+        int dias = Integer.MAX_VALUE;
         SimpleDateFormat format = new SimpleDateFormat(formato);
 
         Date d1 = null;
         Date d2 = null;
 
-        try {
+        try
+        {
             d1 = format.parse(fecha1);
             d2 = format.parse(fecha2);
 
             DateTime dt1 = new DateTime(d1);
             DateTime dt2 = new DateTime(d2);
-            dias=Days.daysBetween(dt1, dt2).getDays();
+            dias = Days.daysBetween(dt1, dt2).getDays();
 
 
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
 
@@ -85,26 +91,29 @@ public class ConvertidorFechas
 
     }
 
-    public int devolverHoras(String fecha1,String fecha2,String formato)
+    public int devolverHoras(String fecha1, String fecha2, String formato)
     {
-        int dias=Integer.MAX_VALUE;
+        int dias = Integer.MAX_VALUE;
         SimpleDateFormat format = new SimpleDateFormat(formato);
 
         Date d1 = null;
         Date d2 = null;
 
-        try {
+        try
+        {
             d1 = format.parse(fecha1);
             d2 = format.parse(fecha2);
 
             DateTime dt1 = new DateTime(d1);
             DateTime dt2 = new DateTime(d2);
-            dias=Hours.hoursBetween(dt1, dt2).getHours() % 24;
+            dias = Hours.hoursBetween(dt1, dt2).getHours() % 24;
 
             System.out.print(Minutes.minutesBetween(dt1, dt2).getMinutes() % 60 + " minutes, ");
             System.out.print(Seconds.secondsBetween(dt1, dt2).getSeconds() % 60 + " seconds.");
 
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
 
@@ -112,25 +121,28 @@ public class ConvertidorFechas
 
     }
 
-    public int devolverMinutos(String fecha1,String fecha2,String formato)
+    public int devolverMinutos(String fecha1, String fecha2, String formato)
     {
-        int dias=Integer.MAX_VALUE;
+        int dias = Integer.MAX_VALUE;
         SimpleDateFormat format = new SimpleDateFormat(formato);
 
         Date d1 = null;
         Date d2 = null;
 
-        try {
+        try
+        {
             d1 = format.parse(fecha1);
             d2 = format.parse(fecha2);
 
             DateTime dt1 = new DateTime(d1);
             DateTime dt2 = new DateTime(d2);
-            dias=Minutes.minutesBetween(dt1, dt2).getMinutes() % 60 ;
+            dias = Minutes.minutesBetween(dt1, dt2).getMinutes() % 60;
 
             System.out.print(Seconds.secondsBetween(dt1, dt2).getSeconds() % 60 + " seconds.");
 
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
 
@@ -138,24 +150,27 @@ public class ConvertidorFechas
 
     }
 
-    public int devolverSegundos(String fecha1,String fecha2,String formato)
+    public int devolverSegundos(String fecha1, String fecha2, String formato)
     {
-        int dias=Integer.MAX_VALUE;
+        int dias = Integer.MAX_VALUE;
         SimpleDateFormat format = new SimpleDateFormat(formato);
 
         Date d1 = null;
         Date d2 = null;
 
-        try {
+        try
+        {
             d1 = format.parse(fecha1);
             d2 = format.parse(fecha2);
 
             DateTime dt1 = new DateTime(d1);
             DateTime dt2 = new DateTime(d2);
-            dias=Seconds.secondsBetween(dt1, dt2).getSeconds() % 60  ;
+            dias = Seconds.secondsBetween(dt1, dt2).getSeconds() % 60;
 
 
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
 

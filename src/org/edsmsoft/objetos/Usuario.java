@@ -12,14 +12,14 @@ public class Usuario
     private String idUsuario;
     private String usuario;
     private String clave;
-    private ObservableList <PermisosUsuarios>permisosUsuarioses;
+    private ObservableList<PermisosUsuarios> permisosUsuarioses;
 
     public Usuario(String idUsuario, String usuario, String clave)
     {
         this.idUsuario = idUsuario;
         this.usuario = usuario;
         this.clave = clave;
-        this.permisosUsuarioses= FXCollections.emptyObservableList();
+        this.permisosUsuarioses = FXCollections.emptyObservableList();
     }
 
     public String getIdUsuario()
