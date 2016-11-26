@@ -57,6 +57,8 @@ public class Login implements Initializable
                     Parent root = (Pane) nodo;
                     vent.setTitle("Menu Principal");
                     Scene scene = new Scene(root, 600, 400);
+//                    scene.getStylesheets().add(getClass().getResource("/org/edsmsoft/estilos/estilos.css").toExternalForm());
+                    scene.getStylesheets().add(getClass().getResource("/org/edsmsoft/estilos/estilos.css").toString());
                     adaptar(scene, (Pane) root);
 
                     vent.setScene(scene);
