@@ -1,4 +1,4 @@
-package com.edsmsoft.utilidades;
+package org.edsmsoft.utilidades;
 
 /**
  * Creado por hadexexplade el 16/07/15.17:10

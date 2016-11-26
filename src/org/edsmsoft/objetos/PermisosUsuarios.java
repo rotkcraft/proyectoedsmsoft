@@ -1,8 +1,9 @@
-package com.edsmsoft.objetos;
+package org.edsmsoft.objetos;
 
 /**
- * Creado por hadexexplade el 30/11/15.11:01
+ * Created by rcraft on 11-25-16.
  */
+
 public class PermisosUsuarios
 {
     private String idPermisos;

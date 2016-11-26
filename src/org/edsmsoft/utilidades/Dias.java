@@ -1,4 +1,4 @@
-package com.edsmsoft.utilidades;
+package org.edsmsoft.utilidades;
 
 /**
  * Created by rcraft on 03-25-16.

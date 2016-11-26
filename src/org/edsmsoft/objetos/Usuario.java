@@ -1,11 +1,12 @@
-package com.edsmsoft.objetos;
+package org.edsmsoft.objetos;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- * Creado por hadexexplade el 30/11/15.10:58
+ * Created by rcraft on 11-25-16.
  */
+
 public class Usuario
 {
     private String idUsuario;

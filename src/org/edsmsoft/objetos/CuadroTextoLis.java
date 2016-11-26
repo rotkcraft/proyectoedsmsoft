@@ -1,7 +1,7 @@
-package com.edsmsoft.objetos;
+package org.edsmsoft.objetos;
 
 
-import com.edsmsoft.utilidades.EnviarInfo;
+import org.edsmsoft.utilidades.EnviarInfo;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -20,9 +20,9 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 /**
- * This class is a TextField which implements an "autocomplete" functionality, based on a supplied list of contenido.
- * @author Caleb Brinkman
+ * Created by rcraft on 11-25-16.
  */
+
 public class CuadroTextoLis extends TextField
 {
   /** The existing autocomplete contenido. */

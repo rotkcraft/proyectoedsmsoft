@@ -1,4 +1,4 @@
-package com.edsmsoft.utilidades;
+package org.edsmsoft.utilidades;
 
 import com.sun.javafx.scene.control.skin.TableViewSkin;
 import javafx.collections.ListChangeListener;

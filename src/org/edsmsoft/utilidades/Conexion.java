@@ -1,8 +1,8 @@
-package com.edsmsoft.utilidades;
+package org.edsmsoft.utilidades;
 
-import com.rcraft.horario.estructuras.ListaDoble;
-import com.rcraft.horario.objetos.PermisosUsuarios;
-import com.rcraft.horario.objetos.Usuario;
+import org.edsmsoft.estructuras.ListaDoble;
+import org.edsmsoft.objetos.PermisosUsuarios;
+import org.edsmsoft.objetos.Usuario;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -14,6 +14,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Callback;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.JTable;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
 import java.awt.Component;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -29,19 +35,13 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.DefaultListModel;
-import javax.swing.JTable;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumnModel;
 
 
 
 /**
- * Created by hadexexplade on 21/05/15.
+ * Created by rcraft on 11-25-16.
  */
 public class Conexion
 {
@@ -77,55 +77,7 @@ public class Conexion
         archivo.guardar(new Encriptar().encriptar(conn+","+usuario+","+pass+";"));
 //        Conexion conexion = new Conexion();
 //        Conexion bd = new Conexion(conn, usuario, pass);
-//
-//
-////        int i = bd.aumentarId("select * from cliente");
-////        JFileChooser chooser = new JFileChooser();
-////        chooser.addChoosableFileFilter (new FileNameExtensionFilter ("Imagenes", ImageIO.getReaderFileSuffixes ()));
-////        for (String ext: ImageIO.getReaderFileSuffixes ()) {
-////            FileFilter filter = new FileNameExtensionFilter (ext + " Archivos", ext);
-////            chooser.addChoosableFileFilter(filter);
-////            chooser.setAcceptAllFileFilterUsed (false);
-////        }
-////        int returnVal = chooser.showOpenDialog(null);
-////        File file = null;
-////        if (returnVal == JFileChooser.APPROVE_OPTION) {
-////            file = chooser.getSelectedFile(); // path to image
-////            System.out.println(bd.ingresarArchivo("insert into cliente values(" + i + ",'juan dsfsdfsd sdfsdf','martines dfgdfgd ertertz',?)", file.getPath(), 1));
-////
-////        }
-//
-//
-////        System.out.println ( bd.devolvertodo ( "select * from cliente" ) );
-//        JScrollPane deslizar = new JScrollPane();
-//        deslizar.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-//        JPanel jp = new JPanel();
-//        jp.setPreferredSize(new Dimension(200, 100));
-//
-//        deslizar.setSize(100, 100);
-//        jp.add(deslizar);
-//        JTable tabla = new JTable();
-//        DefaultTableModel md = new DefaultTableModel();
-//        tabla.setModel(md);
-//        deslizar.setViewportView(tabla);
-////        JComboBox cmb = new JComboBox ( );
-////        DefaultComboBoxModel cm = new DefaultComboBoxModel ( );
-////        cmb.setModel ( cm );
-//
-//        bd.llenarTablaBlob("select idcliente,nombre,apellido,foto from cliente", md, tabla);
-//
-//        tabla.setPreferredScrollableViewportSize(tabla.getPreferredSize());
-//
-////        bd.llenarmodelCombo ( "select * from cliente", "nombre", cm );
-//        JFrame jf = new JFrame();
-//        jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//        jf.getContentPane().add(deslizar);
-//        jf.setSize(200, 200);
-//        jf.setLocationRelativeTo(null);
-//        jf.setVisible(true);
-////        JOptionPane.showMessageDialog(null, jp);
-////        JOptionPane.showMessageDialog ( null, cmb );
-    }*/
+//  }*/
     
     public int cantidadFilas(String sql)
     {

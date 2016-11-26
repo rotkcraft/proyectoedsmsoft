@@ -1,4 +1,4 @@
-package com.edsmsoft.objetos;
+package org.edsmsoft.objetos;
 
 import javafx.util.converter.LocalTimeStringConverter;
 
@@ -6,8 +6,9 @@ import java.time.LocalTime;
 import java.time.format.FormatStyle;
 
 /**
- * Created by rcraft on 08-20-16.
+ * Created by rcraft on 11-25-16.
  */
+
 public class HoraC
 {
     LocalTime horaInicio;

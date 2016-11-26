@@ -1,4 +1,4 @@
-package com.edsmsoft.utilidades;
+package org.edsmsoft.utilidades;
 
 import javafx.collections.ObservableList;
 

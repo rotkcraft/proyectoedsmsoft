@@ -1,9 +1,9 @@
-package com.edsmsoft.estructuras;
+package org.edsmsoft.estructuras;
 
 import java.util.Random;
 
 /**
- * Creado por hadexexplade el 19/07/15.11:39
+ * Created by rcraft on 11-25-16.
  */
 public class ListaDoble<E> implements Cloneable
 {

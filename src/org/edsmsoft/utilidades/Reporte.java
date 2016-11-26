@@ -1,4 +1,4 @@
-package com.edsmsoft.utilidades;
+package org.edsmsoft.utilidades;
 
 import javafx.stage.Stage;
 import org.rcraft.visor.JasperViewerFX;
@@ -6,7 +6,9 @@ import org.rcraft.visor.JasperViewerFX;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.HashMap;
-
+/**
+ * Created by rcraft on 11-25-16.
+ */
 public class Reporte
 {
     private String url;

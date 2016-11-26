@@ -1,4 +1,4 @@
-package com.edsmsoft.utilidades;
+package org.edsmsoft.utilidades;
 
 import org.joda.time.DateTime;
 import org.joda.time.Days;
