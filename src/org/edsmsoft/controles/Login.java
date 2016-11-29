@@ -38,6 +38,7 @@ public class Login implements Initializable
     {
         btnEntrar.setMaxWidth(Double.MAX_VALUE);
         btnSalir.setMaxWidth(Double.MAX_VALUE);
+
         btnEntrar.setOnAction(new EventHandler<ActionEvent>()
         {
             @Override
