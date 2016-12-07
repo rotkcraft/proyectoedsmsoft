@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="contenedorMPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.edsmsoft.controles.MenuPrincipal">
+   <children>
+      <JFXTextField labelFloat="true" layoutX="112.0" layoutY="143.0" promptText="Anualidad" />
+      <JFXTextField labelFloat="true" layoutX="112.0" layoutY="199.0" promptText="Jornada" />
+      <JFXTextField labelFloat="true" layoutX="112.0" layoutY="259.0" promptText="Curso" />
+      <JFXTextField labelFloat="true" layoutX="112.0" layoutY="319.0" promptText="Hora Inicio" />
+      <JFXTextField labelFloat="true" layoutX="112.0" layoutY="379.0" promptText="Dia Semana" />
+      <JFXTextField labelFloat="true" layoutX="277.0" layoutY="143.0" promptText="Periodo" />
+      <JFXTextField labelFloat="true" layoutX="277.0" layoutY="199.0" promptText="Materia" />
+      <JFXTextField labelFloat="true" layoutX="277.0" layoutY="259.0" promptText="Catedratico" />
+      <JFXTextField labelFloat="true" layoutX="276.0" layoutY="319.0" promptText="Hora " />
+      <JFXTextField labelFloat="true" layoutX="278.0" layoutY="379.0" promptText="Fin" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="52.0" prefHeight="20.0" prefWidth="455.0" text="CARGA ACADEMICA">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+         <effect>
+            <DropShadow radius="10.7425" spread="0.05" width="23.97" />
+         </effect>
+      </Label>
+      <JFXButton cache="true" layoutX="504.0" layoutY="247.0" prefHeight="54.0" prefWidth="109.0" ripplerFill="#1c1c1c" text="Guardar">
+         <effect>
+            <Blend>
+               <topInput>
+                  <Glow />
+               </topInput>
+            </Blend>
+         </effect></JFXButton>
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+   <cursor>
+      <Cursor fx:constant="TEXT" />
+   </cursor>
+</AnchorPane>
