@@ -3,4 +3,8 @@
     -fx-background-color: #0097a7;
     -fx-text-fill: #ffffff;
 }
+.jfx-text-field, .jfx-password-field label-float
+{
+    -fx-text-fill:red;
+}
 

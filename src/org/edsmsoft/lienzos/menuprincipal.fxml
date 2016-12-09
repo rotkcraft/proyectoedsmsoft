@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXDrawer?>
-<?import com.jfoenix.controls.JFXHamburger?>
-<?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="contenedorMPrincipal" maxHeight="-Infinity" maxWidth="-Infinity"
-            minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/8.0.65" fx:controller="org.edsmsoft.controles.MenuPrincipal">
-    <children>
-        <JFXDrawer fx:id="menuDraw" defaultDrawerSize="200.0" layoutY="34.0" prefHeight="370.0" prefWidth="210.0"/>
-        <JFXHamburger fx:id="btnMenuPrincipal" layoutX="8.0" layoutY="4.0"/>
-    </children>
-</AnchorPane>
+
+<?import application.MaterialText?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="70" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.edsmsoft.controles.MenuPrincipal">
+  <children>
+    <ImageView fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@/org/edsmsoft/imagenes/fondo.jpg"/>
+      </image>
+    </ImageView>
+    <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="14.0" layoutY="25.0" pickOnBounds="true"
+               preserveRatio="true">
+      <image>
+        <Image url="@/org/edsmsoft/imagenes/usuario.png"/>
+      </image>
+    </ImageView>
+    <VBox fx:id="vbPanel" layoutX="2.0" layoutY="150.0" prefHeight="448.0" prefWidth="240.0">
+
+    </VBox>
+    <MaterialText fill="WHITE" layoutX="92.0" layoutY="65.0" text="Usuario" wrappingWidth="103.0">
+      <font>
+        <Font size="21.0"/>
+      </font>
+    </MaterialText>
+  </children>
+</Pane>

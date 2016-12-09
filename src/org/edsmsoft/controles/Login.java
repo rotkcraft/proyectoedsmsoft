@@ -1,18 +1,24 @@
 package org.edsmsoft.controles;
 
+import application.ActionBar;
+import application.DrawerLayout;
+import application.MaterialRootLayout;
+import application.MaterialText;
+import application.TabTitle;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.edsmsoft.utilidades.Escalar;
 
@@ -36,6 +42,7 @@ public class Login implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
+
         btnEntrar.setMaxWidth(Double.MAX_VALUE);
         btnSalir.setMaxWidth(Double.MAX_VALUE);
 
@@ -46,34 +53,35 @@ public class Login implements Initializable
             {
                 try
                 {
-                    Node raiz = (Node) event.getSource();
-                    Stage vent = (Stage) raiz.getScene().getWindow();
+                    Node raiz = (Node)  event.getSource();
+                    Stage vent=(Stage) raiz.getScene().getWindow();
+                    ActionBar barraMenu = new ActionBar("Inicio");
+                    DrawerLayout drawerLayout = new DrawerLayout();
+                    Color blanco = Color.WHITE;
+                     barraMenu.addTab(new TabTitle(new MaterialText("", blanco)), (Pane) FXMLLoader.load(getClass().getResource("/org/edsmsoft/lienzos/paneluno.fxml")));
 
-                    FXMLLoader cargar = new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/menuprincipal.fxml"));
-                    Node nodo = (Node) cargar.load();
+                    FXMLLoader cargar=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/menuprincipal.fxml"));
+                    Node nodo=(Node) cargar.load();
 
-                    MenuPrincipal menuPrincipal = cargar.<MenuPrincipal>getController();
-                    // menuPrincipal.setUsuario(id);
+                     drawerLayout.getChildren().add(nodo);
 
-                    Parent root = (Pane) nodo;
+
+                    MaterialRootLayout root = new MaterialRootLayout(barraMenu, drawerLayout);
                     vent.setTitle("Menu Principal");
-                    Scene scene = new Scene(root, 600, 400);
-//                    scene.getStylesheets().add(getClass().getResource("/org/edsmsoft/estilos/estilos.css").toExternalForm());
+                    Scene scene=new Scene(root, 600, 650);
                     scene.getStylesheets().add(getClass().getResource("/org/edsmsoft/estilos/estilos.css").toString());
-                    adaptar(scene, (Pane) root);
-
                     vent.setScene(scene);
-                    vent.setResizable(false);
-//                    vent.setFullScreen(true);
+
+                    vent.setFullScreen(true);
                     vent.show();
 
-                }
-                catch (Exception ex)
-                {
-                    ex.printStackTrace();
-                }
+                }catch (Exception ex){ex.printStackTrace();}
+
 
             }
+        });
+        btnSalir.setOnAction(event -> {
+            Platform.exit();
         });
     }
 
