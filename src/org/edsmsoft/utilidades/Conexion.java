@@ -543,6 +543,7 @@ public class Conexion
     public void llenarCombo(String tipo, ComboBox<Valor> valorComboBox)
     {
          valorComboBox.getItems().clear();
+
         JSONObject objeto=new Transferencia().traerInfo(tipo);
         JSONArray jsonArray= (JSONArray) objeto.get("generos");
         Iterator iterator=jsonArray.iterator();
