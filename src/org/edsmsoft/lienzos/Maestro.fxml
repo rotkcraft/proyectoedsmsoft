@@ -4,24 +4,29 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="contenedorMPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B2EBF2;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.edsmsoft.controles.Maestro">
+<VBox xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.edsmsoft.controles.Maestro">
+   <children>
+      <AnchorPane fx:id="contenedorMPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="738.0" style="-fx-background-color: #B2EBF2;">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="386.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" />
       <JFXTextField focusColor="#1b1b1b" labelFloat="true" layoutX="37.0" layoutY="37.0" promptText="Nombre" />
       <JFXTextField labelFloat="true" layoutX="37.0" layoutY="80.0" promptText="IDE" />
       <JFXTextField layoutX="37.0" layoutY="130.0" promptText="Fecha Nacimiento" />
-      <JFXTextField layoutX="37.0" layoutY="181.0" promptText="Nacionalidad" />
       <JFXTextField layoutX="37.0" layoutY="231.0" promptText="Enfermedades" />
       <JFXTextField layoutX="202.0" layoutY="37.0" promptText="Apellido" />
-      <JFXTextField layoutX="202.0" layoutY="129.0" promptText="Encargado" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="370.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" />
-      <JFXTextField layoutX="202.0" layoutY="182.0" promptText="Años Experiencia" />
-      <JFXTextField layoutX="202.0" layoutY="231.0" promptText="Telefono" />
+      <JFXTextField layoutX="202.0" layoutY="146.0" promptText="Años Experiencia" />
+      <JFXTextField layoutX="202.0" layoutY="204.0" promptText="Telefono" />
       <JFXTextField layoutX="37.0" layoutY="284.0" promptText="Correo" />
-      <JFXTextField layoutX="202.0" layoutY="284.0" promptText="Dirección" />
+      <JFXTextField layoutX="202.0" layoutY="252.0" promptText="Dirección" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="370.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" />
-      <JFXTextField layoutX="37.0" layoutY="333.0" promptText="Estado civil" />
       <JFXComboBox layoutX="202.0" layoutY="90.0" prefHeight="25.0" prefWidth="149.0" promptText="Género" />
+            <JFXComboBox layoutX="37.0" layoutY="185.0" prefHeight="25.0" prefWidth="149.0" promptText="Nacionalidad" />
+            <JFXComboBox layoutX="37.0" layoutY="339.0" prefHeight="25.0" prefWidth="149.0" promptText="Estado Civil" />
+
    </children>
-</AnchorPane>
+      </AnchorPane>
+   </children>
+</VBox>

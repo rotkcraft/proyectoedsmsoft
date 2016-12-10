@@ -102,7 +102,17 @@ public class MenuPrincipal extends AnchorPane implements Initializable
 
                         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/Maestro.fxml"));
                         Pane panel= (Pane) fxmlLoader.load();
-                         barraMenu.addTab(new TabTitle(new MaterialText("Empleado", blanco)), panel);
+
+                        FXMLLoader fxmlBoton=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/botonesPanel.fxml"));
+                        HBox bpanel= fxmlBoton.load();
+                        BotonesPanel botonesPanel=fxmlBoton.<BotonesPanel>getController();
+
+                        panel.getChildren().add(bpanel);
+                        Maestro maestro=fxmlLoader.<Maestro>getController();
+                        maestro.agregarBotones(botonesPanel);
+
+
+                        barraMenu.addTab(new TabTitle(new MaterialText("Empleado", blanco)), panel);
 
 
                         FXMLLoader cargarM=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/menuprincipal.fxml"));
