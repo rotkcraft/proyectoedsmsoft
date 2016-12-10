@@ -36,9 +36,9 @@ public class Alumno extends VBox implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-//        conexion=new Conexion();
-//        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=nacionalidad",cmbNacionalidad);
-//        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=genero",cmbGenero);
+        conexion=new Conexion();
+        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=nacionalidad",cmbNacionalidad);
+        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=genero",cmbGenero);
         RequiredFieldValidator validator = new RequiredFieldValidator();
         validator.setMessage("Ingrese Informacion en Campo");
         txtNombre.getValidators().add(validator);
