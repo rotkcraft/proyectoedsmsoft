@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.validation.RequiredFieldValidator;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -35,9 +36,13 @@ public class Alumno extends VBox implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        conexion=new Conexion();
-        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=nacionalidad",cmbNacionalidad);
-        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=genero",cmbGenero);
+//        conexion=new Conexion();
+//        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=nacionalidad",cmbNacionalidad);
+//        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=genero",cmbGenero);
+        RequiredFieldValidator validator = new RequiredFieldValidator();
+        validator.setMessage("Ingrese Informacion en Campo");
+        txtNombre.getValidators().add(validator);
+         ;
 
 
     }
@@ -48,7 +53,8 @@ public class Alumno extends VBox implements Initializable
         botonesPanel.setBtnGuardarAccion(event -> {
             System.out.println("Entro aqui");
             JSONObject alumno=new JSONObject();
-           if(txtNombre.getText().isEmpty())
+           if(txtNombre.getText().isEmpty()){}
+
             alumno.put("nombre",txtNombre.getText());
             alumno.put("apellido",txtApellido.getText());
             alumno.put("identidad",txtIdentidad.getText());

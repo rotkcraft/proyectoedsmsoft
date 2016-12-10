@@ -69,7 +69,7 @@ public class MenuPrincipal extends AnchorPane implements Initializable
 
 
                         MaterialRootLayout root = new MaterialRootLayout(barraMenu, drawerLayout);
-                        vent.setScene(new Scene(root));
+                        vent.setScene(new Scene(root,600,500));
                         vent.setFullScreen(true);
 
                     }catch (Exception ex)
