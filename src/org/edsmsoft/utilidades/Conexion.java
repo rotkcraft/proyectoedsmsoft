@@ -14,28 +14,17 @@ import javafx.util.Callback;
 import org.edsmsoft.estructuras.ListaDoble;
 import org.edsmsoft.objetos.PermisosUsuarios;
 import org.edsmsoft.objetos.Usuario;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.DefaultListModel;
-import javax.swing.JTable;
+import javax.swing.*;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
-import java.awt.Component;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.sql.Blob;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Timestamp;
+import java.awt.*;
+import java.io.*;
+import java.sql.*;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 
@@ -53,9 +42,9 @@ public class Conexion
         //   Archivo archivo = new Archivo("archivo/configuraciondb");
         //  String[] s = new Encriptar().desencriptar(archivo.traeArchivo()).split(",|;");
 
-        this.usuario = "root";
-        this.clave = "root";
-        this.url = "jdbc:mysql://192.168.0.164:3306/bdhorarios";
+     //   this.usuario = "root";
+//        this.clave = "root";
+  //      this.url = "jdbc:mysql://192.168.0.164:3306/bdhorarios";
     }
 
     public Conexion(String url, String usuario, String clave)
@@ -63,6 +52,11 @@ public class Conexion
         this.url = url;
         this.usuario = usuario;
         this.clave = clave;
+    }
+
+    public void insertar(String dir,JSONObject objeto)
+    {
+        new Transferencia().enviarInfo(dir,objeto);
     }
 /*
     public static void main(String args[])
@@ -546,36 +540,18 @@ public class Conexion
         }
     }
 
-    public void llenarCombo(String sql, ComboBox<Valor> valorComboBox)
+    public void llenarCombo(String tipo, ComboBox<Valor> valorComboBox)
     {
-        Connection conn = null;
-        Statement st = null;
-        ResultSet rs = null;
-        ResultSetMetaData rd = null;
-        valorComboBox.getItems().clear();
-        try
+         valorComboBox.getItems().clear();
+        JSONObject objeto=new Transferencia().traerInfo(tipo);
+        JSONArray jsonArray= (JSONArray) objeto.get("generos");
+        Iterator iterator=jsonArray.iterator();
+        while (iterator.hasNext())
         {
-
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection(url, usuario, clave);
-            st = conn.createStatement();
-            rs = st.executeQuery(sql);
-            rd = rs.getMetaData();
-
-            for (int i = 1; i <= rd.getColumnCount(); i++)
-            {
-                valorComboBox.getItems().addAll(new Valor(rd.getColumnName(i), rd.getColumnLabel(i)));
-
-            }
+            JSONObject jsonObject= (JSONObject) iterator.next();
 
 
-            rs.close();
-            st.close();
-            conn.close();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
+            valorComboBox.getItems().add(new Valor(String.valueOf(jsonObject.get(jsonObject.keySet().toArray()[0])),String.valueOf(jsonObject.get(jsonObject.keySet().toArray()[1]))));
         }
     }
 

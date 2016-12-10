@@ -1,10 +1,6 @@
 package org.edsmsoft.controles;
 
-import application.ActionBar;
-import application.DrawerLayout;
-import application.MaterialRootLayout;
-import application.MaterialText;
-import application.TabTitle;
+import application.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +10,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -53,7 +50,20 @@ public class MenuPrincipal extends AnchorPane implements Initializable
                         drawerLayout.getChildren().add(nodo);
 
                         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/alumno.fxml"));
-                        Pane panel= (Pane) fxmlLoader.load();
+                        VBox panel= fxmlLoader.load();
+
+                        FXMLLoader fxmlBoton=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/botonesPanel.fxml"));
+                        HBox bpanel= fxmlBoton.load();
+                        BotonesPanel botonesPanel=fxmlBoton.<BotonesPanel>getController();
+                        panel.getChildren().add(bpanel);
+
+
+                        Alumno alumno=fxmlLoader.<Alumno>getController();
+//                        FXMLLoader botones=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/alumno.fxml"));
+//                        Pane botonesPanel= (Pane) botones.load();
+                         alumno.agregarBotones(botonesPanel);
+
+
                         barraMenu.addTab(new TabTitle(new MaterialText("Alumno", blanco)),panel);
 
 
@@ -98,6 +108,7 @@ public class MenuPrincipal extends AnchorPane implements Initializable
                         FXMLLoader cargarM=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/menuprincipal.fxml"));
                         Node nodo=(Node) cargarM.load();
                         drawerLayout.getChildren().add(nodo);
+
 
 
 

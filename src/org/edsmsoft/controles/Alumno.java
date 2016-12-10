@@ -6,28 +6,57 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import org.edsmsoft.utilidades.Conexion;
+import org.edsmsoft.utilidades.Valor;
+import org.json.simple.JSONObject;
 
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 /**
  * Created by rcraft on 12-09-16.
  */
-public class Alumno implements Initializable
+public class Alumno extends VBox implements Initializable
 {
     public JFXTextField txtNombre;
     public JFXTextField txtIdentidad;
-    public JFXTextField txtNacionalidad;
     public JFXTextArea txtEnfermedades;
     public JFXTextField txtApellido;
-    public JFXComboBox cmbGenero;
+    public JFXComboBox<Valor> cmbGenero;
     public JFXTextField txtEncargado;
     public ImageView fotografia;
     public JFXDatePicker fechaNacimiento;
+    public JFXComboBox<Valor> cmbNacionalidad;
+    public BotonesPanel botonesPanel;
+    Conexion conexion;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
+        conexion=new Conexion();
+        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=nacionalidad",cmbNacionalidad);
+        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=genero",cmbGenero);
+
+
+    }
+
+
+    public void agregarBotones(BotonesPanel botonesPanel) {
+        this.botonesPanel=botonesPanel;
+        botonesPanel.setBtnGuardarAccion(event -> {
+            System.out.println("Entro aqui");
+            JSONObject alumno=new JSONObject();
+            alumno.put("nombre",txtNombre.getText());
+            alumno.put("apellido",txtApellido.getText());
+            alumno.put("identidad",txtIdentidad.getText());
+            alumno.put("nacionalidad",cmbNacionalidad.getSelectionModel().getSelectedItem().getId());
+            alumno.put("genero",cmbGenero.getSelectionModel().getSelectedItem().getId());
+            alumno.put("fechanac",fechaNacimiento.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            conexion.insertar("http://localhost:8080/InsertarAlumno",alumno);
+
+        });
 
     }
 }

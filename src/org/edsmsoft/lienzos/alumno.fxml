@@ -7,32 +7,44 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="contenedorMPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="738.0" style="-fx-background-color: #B2EBF2;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.edsmsoft.controles.Alumno">
+
+<VBox xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.edsmsoft.controles.Alumno">
    <children>
-      <JFXTextField fx:id="txtNombre" focusColor="#1b1b1b" labelFloat="true" layoutX="37.0" layoutY="45.0" promptText="Nombre">
-         <padding>
-            <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
-         </padding></JFXTextField>
-      <JFXTextField fx:id="txtIdentidad" labelFloat="true" layoutX="37.0" layoutY="101.0" promptText="IDE">
-         <padding>
-            <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
-         </padding></JFXTextField>
-      <JFXTextField fx:id="txtNacionalidad" layoutX="45.0" layoutY="164.0" promptText="Nacionalidad">
-         <padding>
-            <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
-         </padding></JFXTextField>
-      <JFXTextArea fx:id="txtEnfermedades" labelFloat="true" layoutX="71.0" layoutY="320.0" maxWidth="631.0" minWidth="631.0" prefHeight="98.0" prefWidth="631.0" promptText="Enfermedades" wrapText="true" />
-      <JFXTextField fx:id="txtApellido" layoutX="293.0" layoutY="42.0" promptText="Apellido">
-         <padding>
-            <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
-         </padding></JFXTextField>
-      <JFXComboBox fx:id="cmbGenero" layoutX="328.0" layoutY="134.0" prefHeight="26.0" prefWidth="156.0" promptText="Genero" />
-      <JFXTextField fx:id="txtEncargado" layoutX="42.0" layoutY="228.0" promptText="Encargado">
-         <padding>
-            <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
-         </padding></JFXTextField>
-      <ImageView fx:id="fotografia" fitHeight="150.0" fitWidth="200.0" layoutX="510.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
-      <JFXDatePicker fx:id="fechaNacimiento" layoutX="323.0" layoutY="201.0" prefHeight="32.0" prefWidth="156.0" promptText="Fecha Nacimiento" />
+      <AnchorPane fx:id="contenedorMPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="738.0" style="-fx-background-color: #B2EBF2;">
+         <children>
+            <JFXTextField fx:id="txtNombre" focusColor="#1b1b1b" labelFloat="true" layoutX="37.0" layoutY="45.0" promptText="Nombre">
+               <padding>
+                  <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="txtIdentidad" labelFloat="true" layoutX="37.0" layoutY="101.0" promptText="IDE">
+               <padding>
+                  <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
+               </padding>
+            </JFXTextField>
+            <JFXComboBox fx:id="cmbNacionalidad" layoutX="45.0" layoutY="164.0" promptText="Nacionalidad">
+               <padding>
+                  <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
+               </padding>
+            </JFXComboBox>
+            <JFXTextArea fx:id="txtEnfermedades" labelFloat="true" layoutX="71.0" layoutY="320.0" maxWidth="631.0" minWidth="631.0" prefHeight="98.0" prefWidth="631.0" promptText="Enfermedades" wrapText="true" />
+            <JFXTextField fx:id="txtApellido" layoutX="293.0" layoutY="42.0" promptText="Apellido">
+               <padding>
+                  <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
+               </padding>
+            </JFXTextField>
+            <JFXComboBox fx:id="cmbGenero" layoutX="328.0" layoutY="134.0" prefHeight="26.0" prefWidth="156.0" promptText="Genero" />
+            <JFXTextField fx:id="txtEncargado" layoutX="42.0" layoutY="228.0" promptText="Encargado">
+               <padding>
+                  <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
+               </padding>
+            </JFXTextField>
+            <ImageView fx:id="fotografia" fitHeight="150.0" fitWidth="200.0" layoutX="510.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
+            <JFXDatePicker fx:id="fechaNacimiento" layoutX="323.0" layoutY="201.0" prefHeight="32.0" prefWidth="156.0" promptText="Fecha Nacimiento" />
+         </children>
+      </AnchorPane>
+
    </children>
-</AnchorPane>
+</VBox>
