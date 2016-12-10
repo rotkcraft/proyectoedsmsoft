@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.HBox?>
 
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.edsmsoft.controles.BotonesPanel">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.edsmsoft.controles.BotonesPanel">
    <children>
       <JFXButton text="Guardar" fx:id="btnGuardar"/>
       <JFXButton text="Modificar"  fx:id="btnModificar"/>

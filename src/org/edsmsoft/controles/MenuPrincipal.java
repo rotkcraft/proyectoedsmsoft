@@ -51,6 +51,7 @@ public class MenuPrincipal extends AnchorPane implements Initializable
 
                         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/alumno.fxml"));
                         VBox panel= fxmlLoader.load();
+                        Alumno alumno=fxmlLoader.<Alumno>getController();
 
                         FXMLLoader fxmlBoton=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/botonesPanel.fxml"));
                         HBox bpanel= fxmlBoton.load();
@@ -58,7 +59,6 @@ public class MenuPrincipal extends AnchorPane implements Initializable
                         panel.getChildren().add(bpanel);
 
 
-                        Alumno alumno=fxmlLoader.<Alumno>getController();
 //                        FXMLLoader botones=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/alumno.fxml"));
 //                        Pane botonesPanel= (Pane) botones.load();
                          alumno.agregarBotones(botonesPanel);
@@ -69,7 +69,7 @@ public class MenuPrincipal extends AnchorPane implements Initializable
 
 
                         MaterialRootLayout root = new MaterialRootLayout(barraMenu, drawerLayout);
-                        vent.setScene(new Scene(root));
+                        vent.setScene(new Scene(root,600,500));
                         vent.setFullScreen(true);
 
                     }catch (Exception ex)

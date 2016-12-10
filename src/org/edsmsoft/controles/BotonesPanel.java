@@ -21,15 +21,15 @@ public class BotonesPanel extends HBox implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        HBox.setHgrow(btnBuscar, Priority.ALWAYS);
+        HBox.setHgrow(btnEliminar, Priority.ALWAYS);
+        HBox.setHgrow(btnModificar, Priority.ALWAYS);
+        HBox.setHgrow(btnGuardar, Priority.ALWAYS);
+
         btnGuardar.setMaxWidth(Double.MAX_VALUE);
         btnModificar.setMaxWidth(Double.MAX_VALUE);
         btnBuscar.setMaxWidth(Double.MAX_VALUE);
         btnEliminar.setMaxWidth(Double.MAX_VALUE);
-        HBox.setHgrow(btnBuscar, Priority.ALWAYS);
-
-        HBox.setHgrow(btnEliminar, Priority.ALWAYS);
-        HBox.setHgrow(btnModificar, Priority.ALWAYS);
-        HBox.setHgrow(btnGuardar, Priority.ALWAYS);
 
 
     }
@@ -39,6 +39,14 @@ public class BotonesPanel extends HBox implements Initializable{
     }
     public void setBtnBuscarAccion(EventHandler<ActionEvent> accion)
     {
-        btnGuardar.setOnAction(accion);
+        btnBuscar.setOnAction(accion);
+    }
+    public void setBtnModificarAccion(EventHandler<ActionEvent> accion)
+    {
+        btnModificar.setOnAction(accion);
+    }
+    public void setBtnEliminarAccion(EventHandler<ActionEvent> accion)
+    {
+        btnEliminar.setOnAction(accion);
     }
 }
