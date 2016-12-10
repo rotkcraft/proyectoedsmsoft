@@ -22,9 +22,9 @@
       <JFXTextField layoutX="37.0" layoutY="284.0" promptText="Correo" />
       <JFXTextField layoutX="202.0" layoutY="252.0" promptText="Dirección" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="370.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" />
-      <JFXComboBox layoutX="202.0" layoutY="90.0" prefHeight="25.0" prefWidth="149.0" promptText="Género"  fx:id="cmbGenero"/>
-            <JFXComboBox layoutX="37.0" layoutY="185.0" prefHeight="25.0" prefWidth="149.0" promptText="Nacionalidad" fx:id="cmbNacionalidad"/>
-            <JFXComboBox layoutX="37.0" layoutY="339.0" prefHeight="25.0" prefWidth="149.0" promptText="Estado Civil" fx:id="cmbEstadoCivil"/>
+      <JFXComboBox layoutX="202.0" layoutY="90.0" prefHeight="25.0" prefWidth="149.0" promptText="Género" />
+            <JFXComboBox layoutX="37.0" layoutY="185.0" prefHeight="25.0" prefWidth="149.0" promptText="Nacionalidad" />
+            <JFXComboBox layoutX="37.0" layoutY="339.0" prefHeight="25.0" prefWidth="149.0" promptText="Estado Civil" />
 
    </children>
       </AnchorPane>

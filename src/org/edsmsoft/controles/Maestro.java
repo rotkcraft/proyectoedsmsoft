@@ -48,6 +48,7 @@ public class Maestro extends VBox implements Initializable
         conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=genero",cmbGenero);
         conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=estadocivil",cmbEstadoCivil);
 
+
     }
 
     public void agregarBotones(BotonesPanel botonesPanel) {
