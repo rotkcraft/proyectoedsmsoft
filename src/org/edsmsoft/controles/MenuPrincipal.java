@@ -102,15 +102,16 @@ public class MenuPrincipal extends AnchorPane implements Initializable
 
                         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/Maestro.fxml"));
                         Pane panel= (Pane) fxmlLoader.load();
+                        Maestro maestro=fxmlLoader.<Maestro>getController();
+
 
                         FXMLLoader fxmlBoton=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/botonesPanel.fxml"));
                         HBox bpanel= fxmlBoton.load();
                         BotonesPanel botonesPanel=fxmlBoton.<BotonesPanel>getController();
-
-                        panel.getChildren().add(bpanel);
-                        Maestro maestro=fxmlLoader.<Maestro>getController();
                         maestro.agregarBotones(botonesPanel);
 
+
+                        panel.getChildren().add(bpanel);
 
                         barraMenu.addTab(new TabTitle(new MaterialText("Empleado", blanco)), panel);
 
@@ -120,15 +121,12 @@ public class MenuPrincipal extends AnchorPane implements Initializable
                         drawerLayout.getChildren().add(nodo);
 
 
-
-
-
                         MaterialRootLayout root = new MaterialRootLayout(barraMenu, drawerLayout);
                         vent.setScene(new Scene(root, 600, 650));
                         vent.setFullScreen(true);
                     }catch (Exception ex)
                     {
-
+                         ex.printStackTrace();
                     }
                 }
             });
@@ -184,50 +182,50 @@ public class MenuPrincipal extends AnchorPane implements Initializable
             vbPanel.getChildren().add(opcion);
         }
 
-        {
-            TabTitle opcion = new TabTitle(new MaterialText("Encargado"));
-            opcion.setOnAction(new EventHandler<ActionEvent>()
-            {
-                public void handle(ActionEvent event)
-                {
-                    try
-                    {
-                        Node raiz = (Node) event.getSource();
-                        Stage vent = (Stage) raiz.getScene().getWindow();
-                        vent.setTitle("Autor");
-
-                        ActionBar barraMenu = new ActionBar("Inicio");
-                        DrawerLayout drawerLayout = new DrawerLayout();
-                        Color blanco = Color.WHITE;
-
-                        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/Encargado.fxml"));
-                        Pane panel= (Pane) fxmlLoader.load();
-                        barraMenu.addTab(new TabTitle(new MaterialText("Agregar Autor", blanco)), panel);
-
-
-                        FXMLLoader cargarM=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/menuprincipal.fxml"));
-                        Node nodo=(Node) cargarM.load();
-                        MenuPrincipal menuPrincipal=cargarM.<MenuPrincipal>getController();
-                        menuPrincipal.setUsuario(usuario);
-                        drawerLayout.getChildren().add(nodo);
-
-                        MaterialRootLayout root = new MaterialRootLayout(barraMenu, drawerLayout);
-                        vent.setScene(new Scene(root, 600, 650));
-
-                        vent.setFullScreen(true);
-                    }catch (Exception ex)
-                    {
-                        ex.printStackTrace();
-
-                    }
-                }
-            });
-            opcion.setPrefSize(240, 50);
-            opcion.setPadding(new Insets(20));
-            opcion.setTextFill(Color.WHITE);
-            opcion.setAlignment(Pos.CENTER_LEFT);
-            vbPanel.getChildren().add(opcion);
-        }
+//        {
+//            TabTitle opcion = new TabTitle(new MaterialText("Encargado"));
+//            opcion.setOnAction(new EventHandler<ActionEvent>()
+//            {
+//                public void handle(ActionEvent event)
+//                {
+//                    try
+//                    {
+//                        Node raiz = (Node) event.getSource();
+//                        Stage vent = (Stage) raiz.getScene().getWindow();
+//                        vent.setTitle("Autor");
+//
+//                        ActionBar barraMenu = new ActionBar("Inicio");
+//                        DrawerLayout drawerLayout = new DrawerLayout();
+//                        Color blanco = Color.WHITE;
+//
+//                        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/Encargado.fxml"));
+//                        Pane panel= (Pane) fxmlLoader.load();
+//                        barraMenu.addTab(new TabTitle(new MaterialText("Agregar Autor", blanco)), panel);
+//
+//
+//                        FXMLLoader cargarM=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/menuprincipal.fxml"));
+//                        Node nodo=(Node) cargarM.load();
+//                        MenuPrincipal menuPrincipal=cargarM.<MenuPrincipal>getController();
+//                        menuPrincipal.setUsuario(usuario);
+//                        drawerLayout.getChildren().add(nodo);
+//
+//                        MaterialRootLayout root = new MaterialRootLayout(barraMenu, drawerLayout);
+//                        vent.setScene(new Scene(root, 600, 650));
+//
+//                        vent.setFullScreen(true);
+//                    }catch (Exception ex)
+//                    {
+//                        ex.printStackTrace();
+//
+//                    }
+//                }
+//            });
+//            opcion.setPrefSize(240, 50);
+//            opcion.setPadding(new Insets(20));
+//            opcion.setTextFill(Color.WHITE);
+//            opcion.setAlignment(Pos.CENTER_LEFT);
+//            vbPanel.getChildren().add(opcion);
+//        }
 
 
 
