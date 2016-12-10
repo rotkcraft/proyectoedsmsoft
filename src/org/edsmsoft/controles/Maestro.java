@@ -26,7 +26,7 @@ public class Maestro extends VBox implements Initializable
     public JFXTextField txtApellido;
     public JFXTextField txtCorreo;
     public JFXTextField txtTelefono;
-    public JFXTextField txtAñosExperiencia;
+    public JFXTextField txtAnosExperiencia;
     public JFXTextField txtDirecion;
     public JFXComboBox<Valor> cmbEstadoCivil;
     public JFXComboBox<Valor> cmbGenero;
