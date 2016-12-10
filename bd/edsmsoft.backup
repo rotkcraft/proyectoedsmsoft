@@ -2,16 +2,12 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.5.4
--- Dumped by pg_dump version 9.5.4
-
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
-SET row_security = off;
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
@@ -34,7 +30,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: acadcargamaestro; Type: TABLE; Schema: public; Owner: postgres
+-- Name: acadcargamaestro; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE acadcargamaestro (
@@ -79,7 +75,7 @@ ALTER SEQUENCE acadcargamaestro_idacadcargamaestro_seq OWNED BY acadcargamaestro
 
 
 --
--- Name: acadcargamaestrodet; Type: TABLE; Schema: public; Owner: postgres
+-- Name: acadcargamaestrodet; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE acadcargamaestrodet (
@@ -122,7 +118,7 @@ ALTER SEQUENCE acadcargamaestrodet_idacadcargamaestrodet_seq OWNED BY acadcargam
 
 
 --
--- Name: acceso; Type: TABLE; Schema: public; Owner: postgres
+-- Name: acceso; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE acceso (
@@ -164,7 +160,7 @@ ALTER SEQUENCE acceso_idacceso_seq OWNED BY acceso.idacceso;
 
 
 --
--- Name: accion; Type: TABLE; Schema: public; Owner: postgres
+-- Name: accion; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE accion (
@@ -205,7 +201,7 @@ ALTER SEQUENCE accion_idaccion_seq OWNED BY accion.idaccion;
 
 
 --
--- Name: alumno; Type: TABLE; Schema: public; Owner: postgres
+-- Name: alumno; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE alumno (
@@ -249,7 +245,7 @@ ALTER SEQUENCE alumno_idalumno_seq OWNED BY alumno.idalumno;
 
 
 --
--- Name: alumnocargamateria; Type: TABLE; Schema: public; Owner: postgres
+-- Name: alumnocargamateria; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE alumnocargamateria (
@@ -290,7 +286,7 @@ ALTER SEQUENCE alumnocargamateria_idalumnocargamateria_seq OWNED BY alumnocargam
 
 
 --
--- Name: anelectivo; Type: TABLE; Schema: public; Owner: postgres
+-- Name: anelectivo; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE anelectivo (
@@ -331,7 +327,7 @@ ALTER SEQUENCE anelectivo_idanelectivo_seq OWNED BY anelectivo.idanelectivo;
 
 
 --
--- Name: catedratico; Type: TABLE; Schema: public; Owner: postgres
+-- Name: catedratico; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE catedratico (
@@ -377,7 +373,7 @@ ALTER SEQUENCE catedratico_idcatedratico_seq OWNED BY catedratico.idcatedratico;
 
 
 --
--- Name: contratomaestro; Type: TABLE; Schema: public; Owner: postgres
+-- Name: contratomaestro; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE contratomaestro (
@@ -420,7 +416,7 @@ ALTER SEQUENCE contratomaestro_idcontratomaestro_seq OWNED BY contratomaestro.id
 
 
 --
--- Name: curso; Type: TABLE; Schema: public; Owner: postgres
+-- Name: curso; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE curso (
@@ -439,7 +435,7 @@ COMMENT ON TABLE curso IS 'Esta tabla guarda los cursos disponibles en la instit
 
 
 --
--- Name: dia; Type: TABLE; Schema: public; Owner: postgres
+-- Name: dia; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE dia (
@@ -479,7 +475,7 @@ ALTER SEQUENCE dia_iddia_seq OWNED BY dia.iddia;
 
 
 --
--- Name: encargadoal; Type: TABLE; Schema: public; Owner: postgres
+-- Name: encargadoal; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE encargadoal (
@@ -523,7 +519,7 @@ ALTER SEQUENCE encargadoal_idencargadoal_seq OWNED BY encargadoal.idencargadoal;
 
 
 --
--- Name: encargadodetallealum; Type: TABLE; Schema: public; Owner: postgres
+-- Name: encargadodetallealum; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE encargadodetallealum (
@@ -566,7 +562,7 @@ ALTER SEQUENCE encargadodetallealum_idencargadodetallealum_seq OWNED BY encargad
 
 
 --
--- Name: encargadodireccion; Type: TABLE; Schema: public; Owner: postgres
+-- Name: encargadodireccion; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE encargadodireccion (
@@ -608,7 +604,7 @@ ALTER SEQUENCE encargadodireccion_idencargadodetallealum_seq OWNED BY encargadod
 
 
 --
--- Name: encargadotelefono; Type: TABLE; Schema: public; Owner: postgres
+-- Name: encargadotelefono; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE encargadotelefono (
@@ -650,7 +646,7 @@ ALTER SEQUENCE encargadotelefono_idencargadotelefono_seq OWNED BY encargadotelef
 
 
 --
--- Name: estadocivil; Type: TABLE; Schema: public; Owner: postgres
+-- Name: estadocivil; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE estadocivil (
@@ -690,7 +686,7 @@ ALTER SEQUENCE estadocivil_idestadocivil_seq OWNED BY estadocivil.idestadocivil;
 
 
 --
--- Name: genero; Type: TABLE; Schema: public; Owner: postgres
+-- Name: genero; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE genero (
@@ -730,7 +726,7 @@ ALTER SEQUENCE genero_idgenero_seq OWNED BY genero.idgenero;
 
 
 --
--- Name: jornada; Type: TABLE; Schema: public; Owner: postgres
+-- Name: jornada; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE jornada (
@@ -770,7 +766,7 @@ ALTER SEQUENCE jornada_idjornada_seq OWNED BY jornada.idjornada;
 
 
 --
--- Name: materia; Type: TABLE; Schema: public; Owner: postgres
+-- Name: materia; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE materia (
@@ -810,7 +806,7 @@ ALTER SEQUENCE materia_idmateria_seq OWNED BY materia.idmateria;
 
 
 --
--- Name: matricula; Type: TABLE; Schema: public; Owner: postgres
+-- Name: matricula; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE matricula (
@@ -854,7 +850,7 @@ ALTER SEQUENCE matricula_idmatricula_seq OWNED BY matricula.idmatricula;
 
 
 --
--- Name: nacionalidad; Type: TABLE; Schema: public; Owner: postgres
+-- Name: nacionalidad; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE nacionalidad (
@@ -894,7 +890,7 @@ ALTER SEQUENCE nacionalidad_idnacionalidad_seq OWNED BY nacionalidad.idnacionali
 
 
 --
--- Name: nivel; Type: TABLE; Schema: public; Owner: postgres
+-- Name: nivel; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE nivel (
@@ -935,7 +931,7 @@ ALTER SEQUENCE nivel_idnivel_seq OWNED BY nivel.idnivel;
 
 
 --
--- Name: notas; Type: TABLE; Schema: public; Owner: postgres
+-- Name: notas; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE notas (
@@ -978,7 +974,7 @@ ALTER SEQUENCE notas_idnotas_seq OWNED BY notas.idnotas;
 
 
 --
--- Name: permiso; Type: TABLE; Schema: public; Owner: postgres
+-- Name: permiso; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE permiso (
@@ -1020,7 +1016,7 @@ ALTER SEQUENCE permiso_idpermiso_seq OWNED BY permiso.idpermiso;
 
 
 --
--- Name: persona; Type: TABLE; Schema: public; Owner: postgres
+-- Name: persona; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE persona (
@@ -1061,7 +1057,7 @@ ALTER SEQUENCE persona_idpersona_seq OWNED BY persona.idpersona;
 
 
 --
--- Name: seccion; Type: TABLE; Schema: public; Owner: postgres
+-- Name: seccion; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE seccion (
@@ -1101,7 +1097,7 @@ ALTER SEQUENCE seccion_idseccion_seq OWNED BY seccion.idseccion;
 
 
 --
--- Name: usuario; Type: TABLE; Schema: public; Owner: postgres
+-- Name: usuario; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE usuario (
@@ -1549,6 +1545,11 @@ SELECT pg_catalog.setval('encargadotelefono_idencargadotelefono_seq', 1, false);
 --
 
 COPY estadocivil (idestadocivil, civil) FROM stdin;
+1	soltero
+2	casado
+3	divorciado
+4	viudo
+5	union libre
 \.
 
 
@@ -1556,7 +1557,7 @@ COPY estadocivil (idestadocivil, civil) FROM stdin;
 -- Name: estadocivil_idestadocivil_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('estadocivil_idestadocivil_seq', 1, false);
+SELECT pg_catalog.setval('estadocivil_idestadocivil_seq', 5, true);
 
 
 --
@@ -1795,6 +1796,486 @@ COPY usuario (idusuario, usuario, clave, fechacreau, idpersona) FROM stdin;
 --
 
 SELECT pg_catalog.setval('usuario_idusuario_seq', 1, false);
+
+
+--
+-- Name: acadcargamaestro_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY acadcargamaestro
+    ADD CONSTRAINT acadcargamaestro_pkey PRIMARY KEY (idacadcargamaestro);
+
+
+--
+-- Name: acadcargamaestrodet_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY acadcargamaestrodet
+    ADD CONSTRAINT acadcargamaestrodet_pkey PRIMARY KEY (idacadcargamaestrodet);
+
+
+--
+-- Name: acceso_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY acceso
+    ADD CONSTRAINT acceso_pkey PRIMARY KEY (idacceso);
+
+
+--
+-- Name: accion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY accion
+    ADD CONSTRAINT accion_pkey PRIMARY KEY (idaccion);
+
+
+--
+-- Name: alumno_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY alumno
+    ADD CONSTRAINT alumno_pkey PRIMARY KEY (idalumno);
+
+
+--
+-- Name: alumnocargamateria_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY alumnocargamateria
+    ADD CONSTRAINT alumnocargamateria_pkey PRIMARY KEY (idalumnocargamateria);
+
+
+--
+-- Name: anelectivo_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY anelectivo
+    ADD CONSTRAINT anelectivo_pkey PRIMARY KEY (idanelectivo);
+
+
+--
+-- Name: catedratico_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY catedratico
+    ADD CONSTRAINT catedratico_pkey PRIMARY KEY (idcatedratico);
+
+
+--
+-- Name: contratomaestro_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY contratomaestro
+    ADD CONSTRAINT contratomaestro_pkey PRIMARY KEY (idcontratomaestro);
+
+
+--
+-- Name: curso_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY curso
+    ADD CONSTRAINT curso_pkey PRIMARY KEY (idcurso);
+
+
+--
+-- Name: dia_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY dia
+    ADD CONSTRAINT dia_pkey PRIMARY KEY (iddia);
+
+
+--
+-- Name: encargadoal_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY encargadoal
+    ADD CONSTRAINT encargadoal_pkey PRIMARY KEY (idencargadoal);
+
+
+--
+-- Name: encargadodetallealum_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY encargadodetallealum
+    ADD CONSTRAINT encargadodetallealum_pkey PRIMARY KEY (idencargadodetallealum);
+
+
+--
+-- Name: encargadodireccion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY encargadodireccion
+    ADD CONSTRAINT encargadodireccion_pkey PRIMARY KEY (idencargadodetallealum);
+
+
+--
+-- Name: encargadotelefono_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY encargadotelefono
+    ADD CONSTRAINT encargadotelefono_pkey PRIMARY KEY (idencargadotelefono);
+
+
+--
+-- Name: estadocivil_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY estadocivil
+    ADD CONSTRAINT estadocivil_pkey PRIMARY KEY (idestadocivil);
+
+
+--
+-- Name: genero_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY genero
+    ADD CONSTRAINT genero_pkey PRIMARY KEY (idgenero);
+
+
+--
+-- Name: idusuario; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY usuario
+    ADD CONSTRAINT idusuario PRIMARY KEY (idusuario);
+
+
+--
+-- Name: jornada_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY jornada
+    ADD CONSTRAINT jornada_pkey PRIMARY KEY (idjornada);
+
+
+--
+-- Name: materia_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY materia
+    ADD CONSTRAINT materia_pkey PRIMARY KEY (idmateria);
+
+
+--
+-- Name: nacionalidad_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY nacionalidad
+    ADD CONSTRAINT nacionalidad_pkey PRIMARY KEY (idnacionalidad);
+
+
+--
+-- Name: nivel_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY nivel
+    ADD CONSTRAINT nivel_pkey PRIMARY KEY (idnivel);
+
+
+--
+-- Name: notas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY notas
+    ADD CONSTRAINT notas_pkey PRIMARY KEY (idnotas);
+
+
+--
+-- Name: persona_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY persona
+    ADD CONSTRAINT persona_pkey PRIMARY KEY (idpersona);
+
+
+--
+-- Name: pkidpermiso; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY permiso
+    ADD CONSTRAINT pkidpermiso PRIMARY KEY (idpermiso);
+
+
+--
+-- Name: seccion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY seccion
+    ADD CONSTRAINT seccion_pkey PRIMARY KEY (idseccion);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY alumno
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idpersona) REFERENCES persona(idpersona);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY encargadoal
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idpersona) REFERENCES persona(idpersona);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY encargadodetallealum
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idencargadoal) REFERENCES encargadoal(idencargadoal);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY encargadotelefono
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idencargadoal) REFERENCES encargadoal(idencargadoal);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY encargadodireccion
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idencargadoal) REFERENCES encargadoal(idencargadoal);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY acadcargamaestro
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idcatedratico) REFERENCES catedratico(idcatedratico);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY catedratico
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idpersona) REFERENCES persona(idpersona);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY acadcargamaestrodet
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idacadcargamaestro) REFERENCES acadcargamaestro(idacadcargamaestro);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY alumnocargamateria
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idalumno) REFERENCES alumno(idalumno);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY notas
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idalumnocargamateria) REFERENCES alumnocargamateria(idalumnocargamateria);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY matricula
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idanelectivo) REFERENCES anelectivo(idanelectivo);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY usuario
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idpersona) REFERENCES persona(idpersona);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY acceso
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idaccion) REFERENCES accion(idaccion);
+
+
+--
+-- Name: foreign_key01; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY permiso
+    ADD CONSTRAINT foreign_key01 FOREIGN KEY (idusuario) REFERENCES usuario(idusuario);
+
+
+--
+-- Name: foreign_key02; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY alumno
+    ADD CONSTRAINT foreign_key02 FOREIGN KEY (idnacionalidad) REFERENCES nacionalidad(idnacionalidad);
+
+
+--
+-- Name: foreign_key02; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY encargadoal
+    ADD CONSTRAINT foreign_key02 FOREIGN KEY (idgenero) REFERENCES genero(idgenero);
+
+
+--
+-- Name: foreign_key02; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY encargadodetallealum
+    ADD CONSTRAINT foreign_key02 FOREIGN KEY (idalumno) REFERENCES alumno(idalumno);
+
+
+--
+-- Name: foreign_key02; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY acadcargamaestro
+    ADD CONSTRAINT foreign_key02 FOREIGN KEY (idanelectivo) REFERENCES anelectivo(idanelectivo);
+
+
+--
+-- Name: foreign_key02; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY catedratico
+    ADD CONSTRAINT foreign_key02 FOREIGN KEY (idgenero) REFERENCES genero(idgenero);
+
+
+--
+-- Name: foreign_key02; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY acadcargamaestrodet
+    ADD CONSTRAINT foreign_key02 FOREIGN KEY (iddia) REFERENCES dia(iddia);
+
+
+--
+-- Name: foreign_key02; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY alumnocargamateria
+    ADD CONSTRAINT foreign_key02 FOREIGN KEY (idacadcargamaestro) REFERENCES acadcargamaestro(idacadcargamaestro);
+
+
+--
+-- Name: foreign_key02; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY matricula
+    ADD CONSTRAINT foreign_key02 FOREIGN KEY (idcurso) REFERENCES curso(idcurso);
+
+
+--
+-- Name: foreign_key02; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY acceso
+    ADD CONSTRAINT foreign_key02 FOREIGN KEY (idnivel) REFERENCES nivel(idnivel);
+
+
+--
+-- Name: foreign_key02; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY permiso
+    ADD CONSTRAINT foreign_key02 FOREIGN KEY (idacceso) REFERENCES acceso(idacceso);
+
+
+--
+-- Name: foreign_key03; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY alumno
+    ADD CONSTRAINT foreign_key03 FOREIGN KEY (idgenero) REFERENCES genero(idgenero);
+
+
+--
+-- Name: foreign_key03; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY encargadoal
+    ADD CONSTRAINT foreign_key03 FOREIGN KEY (idnacionalidad) REFERENCES nacionalidad(idnacionalidad);
+
+
+--
+-- Name: foreign_key03; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY acadcargamaestro
+    ADD CONSTRAINT foreign_key03 FOREIGN KEY (idcurso) REFERENCES curso(idcurso);
+
+
+--
+-- Name: foreign_key03; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY catedratico
+    ADD CONSTRAINT foreign_key03 FOREIGN KEY (idestadocivil) REFERENCES estadocivil(idestadocivil);
+
+
+--
+-- Name: foreign_key03; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY matricula
+    ADD CONSTRAINT foreign_key03 FOREIGN KEY (idalumno) REFERENCES alumno(idalumno);
+
+
+--
+-- Name: foreign_key04; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY acadcargamaestro
+    ADD CONSTRAINT foreign_key04 FOREIGN KEY (idjornada) REFERENCES jornada(idjornada);
+
+
+--
+-- Name: foreign_key04; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY matricula
+    ADD CONSTRAINT foreign_key04 FOREIGN KEY (idencargadoal) REFERENCES encargadoal(idencargadoal);
+
+
+--
+-- Name: foreign_key05; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY acadcargamaestro
+    ADD CONSTRAINT foreign_key05 FOREIGN KEY (idseccion) REFERENCES seccion(idseccion);
+
+
+--
+-- Name: foreign_key06; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY acadcargamaestro
+    ADD CONSTRAINT foreign_key06 FOREIGN KEY (idmateria) REFERENCES materia(idmateria);
+
+
+--
+-- Name: idcatedatrico; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY contratomaestro
+    ADD CONSTRAINT idcatedatrico FOREIGN KEY (idcatedratico) REFERENCES catedratico(idcatedratico);
 
 
 --
