@@ -14,7 +14,6 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
 
 /**
  * Created by rcraft on 12-09-16.
@@ -80,28 +79,24 @@ public class Transferencia
             HttpURLConnection connection= (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
+            connection.setUseCaches (false);
+            connection.setRequestProperty("Accept","application/json");
+            connection.setRequestProperty("Content-Type","application/json");
 
 
             OutputStream outputStream=connection.getOutputStream();
             BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
+            JSONObject jsonObject=new JSONObject();
+            jsonObject.put("info",object);
 
-            String sinfo=URLEncoder.encode("info","UTF-8")+" = "+ URLEncoder.encode(object.toString(), "UTF-8");
-            bufferedWriter.write(sinfo);
+//            String sinfo=URLEncoder.encode(object.toString(), "UTF-8");
+
+            System.out.println(jsonObject.toString());
+            bufferedWriter.write(jsonObject.toString());
             bufferedWriter.flush();
             bufferedWriter.close();
             outputStream.close();
             InputStream inputStream=connection.getInputStream();
-
-             BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream));
-            String linea="";
-            StringBuilder respuesta=new StringBuilder();
-
-            while ((linea=bufferedReader.readLine())!=null){
-                respuesta.append(linea+"\n");
-            }
-            bufferedReader.close();
-            System.out.println(respuesta.toString());
-
             inputStream.close();
             connection.disconnect();
 

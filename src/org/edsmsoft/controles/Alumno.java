@@ -48,10 +48,11 @@ public class Alumno extends VBox implements Initializable
         botonesPanel.setBtnGuardarAccion(event -> {
             System.out.println("Entro aqui");
             JSONObject alumno=new JSONObject();
+           if(txtNombre.getText().isEmpty())
             alumno.put("nombre",txtNombre.getText());
             alumno.put("apellido",txtApellido.getText());
             alumno.put("identidad",txtIdentidad.getText());
-            alumno.put("nacionalidad",cmbNacionalidad.getSelectionModel().getSelectedItem().getId());
+           alumno.put("nacionalidad",cmbNacionalidad.getSelectionModel().getSelectedItem().getId());
             alumno.put("genero",cmbGenero.getSelectionModel().getSelectedItem().getId());
             alumno.put("fechanac",fechaNacimiento.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
             conexion.insertar("http://localhost:8080/InsertarAlumno",alumno);
