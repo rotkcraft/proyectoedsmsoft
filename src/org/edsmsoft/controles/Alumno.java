@@ -54,7 +54,6 @@ public class Alumno extends VBox implements Initializable
 
             JSONObject alumno=new JSONObject();
 
-
            if(txtNombre.getText().isEmpty()){}
 
             alumno.put("nombre",txtNombre.getText());
