@@ -51,11 +51,9 @@ public class Alumno extends VBox implements Initializable
     public void agregarBotones(BotonesPanel botonesPanel) {
         this.botonesPanel=botonesPanel;
         botonesPanel.setBtnGuardarAccion(event -> {
-            System.out.println("Entro aqui");
+
             JSONObject alumno=new JSONObject();
 
-
-            alumno.put("alnombre",txtNombre.getText());
 
            if(txtNombre.getText().isEmpty()){}
 
