@@ -2,15 +2,16 @@ package org.edsmsoft.controles;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import org.edsmsoft.utilidades.Conexion;
 import org.edsmsoft.utilidades.Valor;
+import org.json.simple.JSONObject;
 
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 /**
@@ -22,7 +23,6 @@ public class Maestro extends VBox implements Initializable
 
     public JFXTextField txtNombre;
     public JFXTextField txtIdentidad;
-    public JFXTextArea txtEnfermedades;
     public JFXTextField txtApellido;
     public JFXTextField txtCorreo;
     public JFXTextField txtTelefono;
@@ -34,6 +34,7 @@ public class Maestro extends VBox implements Initializable
     public ImageView fotografia;
     public JFXDatePicker fechaNacimiento;
     public BotonesPanel botonesPanel;
+    public JFXDatePicker fechaEperiencia;
     Conexion conexion;
 
 
@@ -52,6 +53,36 @@ public class Maestro extends VBox implements Initializable
     }
 
     public void agregarBotones(BotonesPanel botonesPanel) {
+
+
         this.botonesPanel=botonesPanel;
+
+        botonesPanel.setBtnGuardarAccion(event -> {
+
+            JSONObject maestro=new JSONObject();
+
+                if(txtNombre.getText().isEmpty()){}
+
+            maestro.put("nombre", txtNombre.getText());
+            maestro.put("identidad",txtIdentidad.getText());
+            maestro.put("apellido",txtApellido.getText());
+            maestro.put("correo",txtCorreo.getText());
+            maestro.put("telefono",txtTelefono.getText());
+            maestro.put("direcion",txtDirecion.getText());
+            maestro.put("estado",cmbEstadoCivil.getSelectionModel().getSelectedItem().getId());
+            maestro.put("genero",cmbGenero.getSelectionModel().getSelectedItem().getId());
+            maestro.put("nacionalidad",cmbNacionalidad.getSelectionModel().getSelectedItem().getId());
+            maestro.put("fechanac",fechaNacimiento.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            maestro.put("fechadeinicioexp",fechaEperiencia.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+
+
+            conexion.insertar("http://localhost:8080/InsertarMaestro",maestro);
+
+        });
+
+
+
+
+
     }
 }

@@ -24,7 +24,9 @@
                   <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
                </padding>
             </JFXTextField>
+
             <JFXComboBox fx:id="cmbNacionalidad" layoutX="45.0" layoutY="164.0" promptText="Nacionalidad">
+
                <padding>
                   <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
                </padding>

@@ -49,7 +49,7 @@ public class MenuPrincipal extends AnchorPane implements Initializable
                         Node nodo=(Node) cargarM.load();
                         drawerLayout.getChildren().add(nodo);
 
-                        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/alumno.fxml"));
+                        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/Alumno.fxml"));
                         VBox panel= fxmlLoader.load();
                         Alumno alumno=fxmlLoader.<Alumno>getController();
 
