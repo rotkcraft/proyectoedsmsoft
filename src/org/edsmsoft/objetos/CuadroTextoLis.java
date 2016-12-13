@@ -25,20 +25,13 @@ import java.util.TreeSet;
 
 public class CuadroTextoLis extends JFXTextField
 {
-    /**
-     * The existing autocomplete contenido.
-     */
+
     private final SortedSet<String> contenido;
-    /**
-     * The popup used to select an entry.
-     */
     private ContextMenu mostrarEntradas;
     private EnviarInfo enviarInfo;
     private String texto;
 
-    /**
-     * Construct a new CuadroTextoLis.
-     */
+
     public CuadroTextoLis()
     {
         super();
