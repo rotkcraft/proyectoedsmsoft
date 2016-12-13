@@ -1387,6 +1387,9 @@ SELECT pg_catalog.setval('accion_idaccion_seq', 1, false);
 
 COPY alumno (idpersona, idgenero, idnacionalidad, identidad, fechanac, idalumno) FROM stdin;
 1	2	4	232342342	1984-09-04	1
+2	1	35	123131313123	1990-08-07	2
+3	2	35	234323453	1990-07-03	3
+4	2	35	545896589643	1990-07-03	4
 \.
 
 
@@ -1394,7 +1397,7 @@ COPY alumno (idpersona, idgenero, idnacionalidad, identidad, fechanac, idalumno)
 -- Name: alumno_idalumno_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('alumno_idalumno_seq', 1, true);
+SELECT pg_catalog.setval('alumno_idalumno_seq', 4, true);
 
 
 --
@@ -1758,6 +1761,9 @@ SELECT pg_catalog.setval('permiso_idpermiso_seq', 1, false);
 
 COPY persona (idpersona, pnombre, snombre) FROM stdin;
 1	sa	se
+2	Juan Carlos	martinez FUnez
+3	Carla Maria	Funez Gutierrz
+4	Esther Lucia	Estrada Caceres
 \.
 
 
@@ -1765,7 +1771,7 @@ COPY persona (idpersona, pnombre, snombre) FROM stdin;
 -- Name: persona_idpersona_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('persona_idpersona_seq', 1, true);
+SELECT pg_catalog.setval('persona_idpersona_seq', 4, true);
 
 
 --
