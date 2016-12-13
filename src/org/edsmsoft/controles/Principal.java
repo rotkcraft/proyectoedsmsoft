@@ -24,6 +24,7 @@ public class Principal extends Application
     public void start(Stage primaryStage) throws IOException
     {
         Archivo archivo=new Archivo("archivo/configuraciondb");
+//        archivo.limpiarArchivo();
         Parent root =null;
         if(archivo.contarRegistros()==0)
         {
