@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.edsmsoft.utilidades.Archivo;
 
 import java.io.IOException;
 
@@ -22,11 +23,22 @@ public class Principal extends Application
     @Override
     public void start(Stage primaryStage) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("/org/edsmsoft/lienzos/login.fxml"));
+        Archivo archivo=new Archivo("archivo/configuraciondb");
+        Parent root =null;
+        if(archivo.contarRegistros()==0)
+        {
+            root = FXMLLoader.load(getClass().getResource("/org/edsmsoft/lienzos/configuracioninicial.fxml"));
+            primaryStage.setTitle("Configuracion Inicial");
+        }
+        else
+        {
+            root = FXMLLoader.load(getClass().getResource("/org/edsmsoft/lienzos/login.fxml"));
+            primaryStage.setTitle("Login");
+        }
 
         Scene scene = new Scene(root);
 
-        primaryStage.setTitle("Login");
+
 
         primaryStage.setScene(scene);
         primaryStage.show();

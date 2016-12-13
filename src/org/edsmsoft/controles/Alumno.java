@@ -8,7 +8,9 @@ import com.jfoenix.validation.RequiredFieldValidator;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import org.edsmsoft.utilidades.Archivo;
 import org.edsmsoft.utilidades.Conexion;
+import org.edsmsoft.utilidades.Encriptar;
 import org.edsmsoft.utilidades.Valor;
 import org.json.simple.JSONObject;
 
@@ -37,8 +39,9 @@ public class Alumno extends VBox implements Initializable
     public void initialize(URL location, ResourceBundle resources)
     {
         conexion=new Conexion();
-        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=nacionalidad",cmbNacionalidad);
-        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=genero",cmbGenero);
+        Archivo archivo=new Archivo("archivo/configuraciondb");
+        conexion.llenarCombo(new Encriptar().desencriptar(archivo.traeArchivo())+"/TraerGen?tipo=nacionalidad",cmbNacionalidad);
+        conexion.llenarCombo(new Encriptar().desencriptar(archivo.traeArchivo())+"/TraerGen?tipo=genero",cmbGenero);
         RequiredFieldValidator validator = new RequiredFieldValidator();
         validator.setMessage("Ingrese Informacion en Campo");
         txtNombre.getValidators().add(validator);

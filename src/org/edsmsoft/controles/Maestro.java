@@ -6,7 +6,9 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import org.edsmsoft.utilidades.Archivo;
 import org.edsmsoft.utilidades.Conexion;
+import org.edsmsoft.utilidades.Encriptar;
 import org.edsmsoft.utilidades.Valor;
 import org.json.simple.JSONObject;
 
@@ -26,7 +28,6 @@ public class Maestro extends VBox implements Initializable
     public JFXTextField txtApellido;
     public JFXTextField txtCorreo;
     public JFXTextField txtTelefono;
-    public JFXTextField txtAnosExperiencia;
     public JFXTextField txtDirecion;
     public JFXComboBox<Valor> cmbEstadoCivil;
     public JFXComboBox<Valor> cmbGenero;
@@ -43,11 +44,11 @@ public class Maestro extends VBox implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-
+        Archivo archivo=new Archivo("archivo/configuraciondb");
         conexion=new Conexion();
-        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=nacionalidad",cmbNacionalidad);
-        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=genero",cmbGenero);
-        conexion.llenarCombo("http://localhost:8080/TraerGen?tipo=estadocivil",cmbEstadoCivil);
+        conexion.llenarCombo(new Encriptar().desencriptar(archivo.traeArchivo())+"/TraerGen?tipo=nacionalidad",cmbNacionalidad);
+        conexion.llenarCombo(new Encriptar().desencriptar(archivo.traeArchivo())+"/TraerGen?tipo=genero",cmbGenero);
+        conexion.llenarCombo(new Encriptar().desencriptar(archivo.traeArchivo())+"/TraerGen?tipo=estadocivil",cmbEstadoCivil);
 
 
     }
