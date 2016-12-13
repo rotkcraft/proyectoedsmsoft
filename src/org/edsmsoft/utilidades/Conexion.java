@@ -275,34 +275,39 @@ public class Conexion
         return permisoUsuarios;
     }
 
-    public LinkedList<String> traerLista(String sql)
+    public LinkedList<String> traerLista(String s, String sql)
     {
         LinkedList<String> permisoUsuarios = new LinkedList<String>();
-        Connection conn = null;
-        Statement st = null;
-        ResultSet rs = null;
-
-        try
+        System.out.println(s);
+        JSONObject objeto=new Transferencia().traerInfo(s);
+        System.out.println(objeto.toString());
+        JSONArray temp=null;
+        if(sql.equals("maestro"))
         {
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection(url, usuario, clave);
-            st = conn.createStatement();
-            rs = st.executeQuery(sql);
+
+          temp= (JSONArray) objeto.get("catedraticos");
+        }
 
 
-            while (rs.next())
+            if(temp!=null)
             {
-                permisoUsuarios.add((rs.getString(2) + "," + rs.getString(1)));
+                JSONArray jsonArray= temp;
+                Iterator iterator=jsonArray.iterator();
+                while (iterator.hasNext())
+                {
+                    JSONObject jsonObject= (JSONObject) iterator.next();
+                    if(sql.equals("maestro"))
+                    {
+                        permisoUsuarios.add(((jsonObject.get("pnombre").toString()+" "+jsonObject.get("snombre")+ "," +jsonObject.get("idcatedratico")  )));
+
+                    }
+
+                }
             }
 
-            rs.close();
-            st.close();
-            conn.close();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+
+
+
 
         return permisoUsuarios;
     }

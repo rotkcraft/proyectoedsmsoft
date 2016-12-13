@@ -12,7 +12,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<?import org.edsmsoft.objetos.CuadroTextoLis?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.edsmsoft.controles.AsignarClase">
    <children>
       <VBox layoutY="43.0" prefHeight="204.0" prefWidth="600.0" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="43.0">
          <children>
@@ -65,10 +66,10 @@
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Label>
-                  <JFXTextField fx:id="txtCatedratico" prefHeight="26.0" prefWidth="203.0">
+                  <CuadroTextoLis fx:id="txtCatedratico" prefHeight="26.0" prefWidth="203.0">
                      <font>
                         <Font name="System Bold" size="13.0" />
-                     </font></JFXTextField>
+                     </font></CuadroTextoLis>
                   <Button fx:id="btnCatedratico" mnemonicParsing="false" text="Buscar">
                      <font>
                         <Font name="System Bold" size="13.0" />

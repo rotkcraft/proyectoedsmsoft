@@ -155,12 +155,31 @@ public class MenuPrincipal extends AnchorPane implements Initializable
 
                         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/asignarclase.fxml"));
                         Pane panel= (Pane) fxmlLoader.load();
-                         barraMenu.addTab(new TabTitle(new MaterialText("Carga Academica", blanco)), panel);
+                        barraMenu.addTab(new TabTitle(new MaterialText("Carga Academica", blanco)), panel);
+
+                        FXMLLoader fxmlLoaderD=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/curso.fxml"));
+                        Pane panelD= (Pane) fxmlLoaderD.load();
+                        barraMenu.addTab(new TabTitle(new MaterialText("Curso", blanco)), panelD);
+
+                        FXMLLoader fxmlLoaderT=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/clase.fxml"));
+                        Pane panelT= (Pane) fxmlLoaderT.load();
+                        barraMenu.addTab(new TabTitle(new MaterialText("Clase", blanco)), panelT);
+
+                        FXMLLoader fxmlLoaderJ=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/jornada.fxml"));
+                        Pane panelJ= (Pane) fxmlLoaderJ.load();
+                        barraMenu.addTab(new TabTitle(new MaterialText("Jornada", blanco)), panelJ);
+
+                        FXMLLoader fxmlLoaderAx=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/anualidad.fxml"));
+                        Pane panelAx= (Pane) fxmlLoaderAx.load();
+                        barraMenu.addTab(new TabTitle(new MaterialText("Anualidad", blanco)), panelAx);
+
+
+
 
 
                         FXMLLoader cargarM=new FXMLLoader(getClass().getResource("/org/edsmsoft/lienzos/menuprincipal.fxml"));
                         Node nodo=(Node) cargarM.load();
-                         drawerLayout.getChildren().add(nodo);
+                        drawerLayout.getChildren().add(nodo);
 
 
                         MaterialRootLayout root = new MaterialRootLayout(barraMenu, drawerLayout);
@@ -181,6 +200,7 @@ public class MenuPrincipal extends AnchorPane implements Initializable
             opcion.setAlignment(Pos.CENTER_LEFT);
             vbPanel.getChildren().add(opcion);
         }
+
 
 //        {
 //            TabTitle opcion = new TabTitle(new MaterialText("Encargado"));
